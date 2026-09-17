@@ -1,0 +1,114 @@
+#0 building with "dandi-pixi-bench" instance using docker-container driver
+
+#1 [internal] load build definition from Dockerfile.baseline
+#1 transferring dockerfile: 3.93kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 0.2s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32
+#3 resolve docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32 done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/neurodebian:trixie
+#4 DONE 0.1s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 77B done
+#5 DONE 0.0s
+
+#6 [core 1/7] FROM docker.io/library/neurodebian:trixie@sha256:90442b03d1539d20325c20279ec1b8a05267bdedcbdf3a6a79bab51496096d28
+#6 resolve docker.io/library/neurodebian:trixie@sha256:90442b03d1539d20325c20279ec1b8a05267bdedcbdf3a6a79bab51496096d28 done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 2.74kB done
+#7 DONE 0.0s
+
+#8 [core 5/7] COPY repos/dandi-cache-utils/src /opt/dandi-cache-utils/src
+#8 CACHED
+
+#9 [core 3/7] RUN python3 -m venv "/opt/venv"
+#9 CACHED
+
+#10 [core 4/7] COPY repos/dandi-cache-utils/pyproject.toml repos/dandi-cache-utils/README.md /opt/dandi-cache-utils/
+#10 CACHED
+
+#11 [core 6/7] RUN chmod +x /opt/dandi-cache-utils/src/dandi_cache_utils/pipeline/*.sh
+#11 CACHED
+
+#12 [core 7/7] RUN pip install "/opt/dandi-cache-utils[s3,archive]"
+#12 CACHED
+
+#13 [core 2/7] RUN apt-get update     && apt-get install -y --no-install-recommends         ca-certificates         git         git-annex-standalone         python3         python3-pip         python3-venv     && rm -rf /var/lib/apt/lists/*
+#13 CACHED
+
+#14 [nwb 1/1] RUN pip install "/opt/dandi-cache-utils[nwb]"
+#14 CACHED
+
+#15 [aind 1/2] COPY repos/qualifying-aind-content-ids/envs/pyproject.toml /tmp/build/pyproject.toml
+#15 DONE 0.0s
+
+#16 [aind 2/2] RUN pip install /tmp/build && rm -rf /tmp/build
+#16 0.382 Processing /tmp/build
+#16 0.386   Installing build dependencies: started
+#16 1.874   Installing build dependencies: finished with status 'done'
+#16 1.876   Getting requirements to build wheel: started
+#16 2.298   Getting requirements to build wheel: finished with status 'done'
+#16 2.300   Preparing metadata (pyproject.toml): started
+#16 2.691   Preparing metadata (pyproject.toml): finished with status 'done'
+#16 2.696 Requirement already satisfied: numpy in /opt/venv/lib/python3.13/site-packages (from qualifying-aind-content-ids==0.1.0) (2.5.3)
+#16 2.941 Collecting spikeinterface (from qualifying-aind-content-ids==0.1.0)
+#16 3.138   Downloading spikeinterface-0.104.9-py3-none-any.whl.metadata (13 kB)
+#16 3.161 Requirement already satisfied: threadpoolctl>=3.0.0 in /opt/venv/lib/python3.13/site-packages (from spikeinterface->qualifying-aind-content-ids==0.1.0) (3.7.0)
+#16 3.161 Requirement already satisfied: tqdm in /opt/venv/lib/python3.13/site-packages (from spikeinterface->qualifying-aind-content-ids==0.1.0) (4.70.1)
+#16 3.161 Requirement already satisfied: zarr<3,>=2.18 in /opt/venv/lib/python3.13/site-packages (from spikeinterface->qualifying-aind-content-ids==0.1.0) (2.18.7)
+#16 3.230 Collecting neo>=0.14.4 (from spikeinterface->qualifying-aind-content-ids==0.1.0)
+#16 3.290   Downloading neo-0.14.5-py3-none-any.whl.metadata (9.2 kB)
+#16 3.389 Collecting probeinterface>=0.3.2 (from spikeinterface->qualifying-aind-content-ids==0.1.0)
+#16 3.463   Downloading probeinterface-0.4.0-py3-none-any.whl.metadata (4.8 kB)
+#16 3.469 Requirement already satisfied: packaging in /opt/venv/lib/python3.13/site-packages (from spikeinterface->qualifying-aind-content-ids==0.1.0) (26.3)
+#16 3.469 Requirement already satisfied: pydantic in /opt/venv/lib/python3.13/site-packages (from spikeinterface->qualifying-aind-content-ids==0.1.0) (2.13.5)
+#16 3.472 Requirement already satisfied: numcodecs<0.16.0 in /opt/venv/lib/python3.13/site-packages (from spikeinterface->qualifying-aind-content-ids==0.1.0) (0.15.1)
+#16 3.476 Requirement already satisfied: deprecated in /opt/venv/lib/python3.13/site-packages (from numcodecs<0.16.0->spikeinterface->qualifying-aind-content-ids==0.1.0) (1.3.1)
+#16 3.488 Requirement already satisfied: asciitree in /opt/venv/lib/python3.13/site-packages (from zarr<3,>=2.18->spikeinterface->qualifying-aind-content-ids==0.1.0) (0.3.3)
+#16 3.491 Requirement already satisfied: fasteners in /opt/venv/lib/python3.13/site-packages (from zarr<3,>=2.18->spikeinterface->qualifying-aind-content-ids==0.1.0) (0.20)
+#16 3.576 Collecting quantities>=0.16.4 (from neo>=0.14.4->spikeinterface->qualifying-aind-content-ids==0.1.0)
+#16 3.633   Downloading quantities-0.16.4-py3-none-any.whl.metadata (4.1 kB)
+#16 3.640 Requirement already satisfied: requests in /opt/venv/lib/python3.13/site-packages (from probeinterface>=0.3.2->spikeinterface->qualifying-aind-content-ids==0.1.0) (2.34.2)
+#16 3.646 Requirement already satisfied: wrapt<3,>=1.10 in /opt/venv/lib/python3.13/site-packages (from deprecated->numcodecs<0.16.0->spikeinterface->qualifying-aind-content-ids==0.1.0) (2.4.1)
+#16 3.653 Requirement already satisfied: annotated-types>=0.6.0 in /opt/venv/lib/python3.13/site-packages (from pydantic->spikeinterface->qualifying-aind-content-ids==0.1.0) (0.8.0)
+#16 3.654 Requirement already satisfied: pydantic-core==2.46.5 in /opt/venv/lib/python3.13/site-packages (from pydantic->spikeinterface->qualifying-aind-content-ids==0.1.0) (2.46.5)
+#16 3.655 Requirement already satisfied: typing-extensions>=4.14.1 in /opt/venv/lib/python3.13/site-packages (from pydantic->spikeinterface->qualifying-aind-content-ids==0.1.0) (4.16.0)
+#16 3.655 Requirement already satisfied: typing-inspection>=0.4.2 in /opt/venv/lib/python3.13/site-packages (from pydantic->spikeinterface->qualifying-aind-content-ids==0.1.0) (0.4.4)
+#16 3.660 Requirement already satisfied: charset_normalizer<4,>=2 in /opt/venv/lib/python3.13/site-packages (from requests->probeinterface>=0.3.2->spikeinterface->qualifying-aind-content-ids==0.1.0) (3.5.1)
+#16 3.661 Requirement already satisfied: idna<4,>=2.5 in /opt/venv/lib/python3.13/site-packages (from requests->probeinterface>=0.3.2->spikeinterface->qualifying-aind-content-ids==0.1.0) (3.20)
+#16 3.661 Requirement already satisfied: urllib3<3,>=1.26 in /opt/venv/lib/python3.13/site-packages (from requests->probeinterface>=0.3.2->spikeinterface->qualifying-aind-content-ids==0.1.0) (2.8.0)
+#16 3.662 Requirement already satisfied: certifi>=2023.5.7 in /opt/venv/lib/python3.13/site-packages (from requests->probeinterface>=0.3.2->spikeinterface->qualifying-aind-content-ids==0.1.0) (2026.7.22)
+#16 3.725 Downloading spikeinterface-0.104.9-py3-none-any.whl (1.1 MB)
+#16 3.999    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 6.6 MB/s eta 0:00:00
+#16 4.064 Downloading neo-0.14.5-py3-none-any.whl (712 kB)
+#16 4.079    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 712.5/712.5 kB 67.0 MB/s eta 0:00:00
+#16 4.138 Downloading probeinterface-0.4.0-py3-none-any.whl (78 kB)
+#16 4.198 Downloading quantities-0.16.4-py3-none-any.whl (104 kB)
+#16 4.225 Building wheels for collected packages: qualifying-aind-content-ids
+#16 4.226   Building wheel for qualifying-aind-content-ids (pyproject.toml): started
+#16 4.531   Building wheel for qualifying-aind-content-ids (pyproject.toml): finished with status 'done'
+#16 4.532   Created wheel for qualifying-aind-content-ids: filename=qualifying_aind_content_ids-0.1.0-py3-none-any.whl size=1245 sha256=294809540fff8626a0617b9cc06ddae1990d1350688a97bcb2b172e69dd95c8c
+#16 4.532   Stored in directory: /tmp/pip-ephem-wheel-cache-zu9yatya/wheels/42/3b/90/614567dfd92fde5cfa8077714452698d7c0501dbc78eecd2bd
+#16 4.534 Successfully built qualifying-aind-content-ids
+#16 4.622 Installing collected packages: quantities, probeinterface, neo, spikeinterface, qualifying-aind-content-ids
+#16 5.389 
+#16 5.395 Successfully installed neo-0.14.5 probeinterface-0.4.0 qualifying-aind-content-ids-0.1.0 quantities-0.16.4 spikeinterface-0.104.9
+#16 DONE 5.5s
+
+#17 exporting to oci image format
+#17 exporting layers
+#17 exporting layers 0.4s done
+#17 exporting manifest sha256:e9f8e0a4a28bf1b7ce1e40bf0b14042ca230e647b80507b5b8d65ed5912eca8f
+#17 exporting manifest sha256:e9f8e0a4a28bf1b7ce1e40bf0b14042ca230e647b80507b5b8d65ed5912eca8f done
+#17 exporting config sha256:a07590ffbff8126abf0d09490274979e3e19bab89578de6a78848f8bac673fa7 done
+#17 sending tarball
+#17 sending tarball 2.1s done
+#17 DONE 2.5s

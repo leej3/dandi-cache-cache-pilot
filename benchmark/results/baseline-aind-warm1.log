@@ -1,0 +1,62 @@
+#0 building with "dandi-pixi-bench" instance using docker-container driver
+
+#1 [internal] load build definition from Dockerfile.baseline
+#1 transferring dockerfile: 3.93kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 0.1s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32
+#3 resolve docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32 done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/neurodebian:trixie
+#4 DONE 0.1s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 77B done
+#5 DONE 0.0s
+
+#6 [core 1/7] FROM docker.io/library/neurodebian:trixie@sha256:90442b03d1539d20325c20279ec1b8a05267bdedcbdf3a6a79bab51496096d28
+#6 resolve docker.io/library/neurodebian:trixie@sha256:90442b03d1539d20325c20279ec1b8a05267bdedcbdf3a6a79bab51496096d28 done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 2.74kB done
+#7 DONE 0.0s
+
+#8 [nwb 1/1] RUN pip install "/opt/dandi-cache-utils[nwb]"
+#8 CACHED
+
+#9 [aind 1/2] COPY repos/qualifying-aind-content-ids/envs/pyproject.toml /tmp/build/pyproject.toml
+#9 CACHED
+
+#10 [core 3/7] RUN python3 -m venv "/opt/venv"
+#10 CACHED
+
+#11 [core 4/7] COPY repos/dandi-cache-utils/pyproject.toml repos/dandi-cache-utils/README.md /opt/dandi-cache-utils/
+#11 CACHED
+
+#12 [core 5/7] COPY repos/dandi-cache-utils/src /opt/dandi-cache-utils/src
+#12 CACHED
+
+#13 [core 6/7] RUN chmod +x /opt/dandi-cache-utils/src/dandi_cache_utils/pipeline/*.sh
+#13 CACHED
+
+#14 [core 7/7] RUN pip install "/opt/dandi-cache-utils[s3,archive]"
+#14 CACHED
+
+#15 [core 2/7] RUN apt-get update     && apt-get install -y --no-install-recommends         ca-certificates         git         git-annex-standalone         python3         python3-pip         python3-venv     && rm -rf /var/lib/apt/lists/*
+#15 CACHED
+
+#16 [aind 2/2] RUN pip install /tmp/build && rm -rf /tmp/build
+#16 CACHED
+
+#17 exporting to oci image format
+#17 exporting layers 0.0s done
+#17 exporting manifest sha256:abcb7ec4a11f834d67e08fa565c93206d190a848b8b8e3ba167b82397be95565 done
+#17 exporting config sha256:c5ec5e41c8768b628e3b69dcb2258bc7732246d0c4d28c015350031aa5b61224 done
+#17 sending tarball
+#17 sending tarball 2.1s done
+#17 DONE 2.1s

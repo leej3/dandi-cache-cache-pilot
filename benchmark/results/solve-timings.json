@@ -1,0 +1,56 @@
+[
+  {
+    "case": "group-cold",
+    "environment": "group",
+    "seconds": 3.60737479099771,
+    "returncode": 0
+  },
+  {
+    "case": "group-warm1",
+    "environment": "group",
+    "seconds": 1.131974457995966,
+    "returncode": 0
+  },
+  {
+    "case": "separate-warm1",
+    "environment": "core",
+    "seconds": 0.8768456249963492,
+    "returncode": 0
+  },
+  {
+    "case": "separate-warm1",
+    "environment": "nwb",
+    "seconds": 1.0873377079842612,
+    "returncode": 0
+  },
+  {
+    "case": "separate-warm1",
+    "environment": "aind",
+    "seconds": 1.1162107499549165,
+    "returncode": 0
+  },
+  {
+    "case": "group-warm2",
+    "environment": "group",
+    "seconds": 1.1000503330142237,
+    "returncode": 0
+  },
+  {
+    "case": "separate-warm2",
+    "environment": "core",
+    "seconds": 0.594965374970343,
+    "returncode": 0
+  },
+  {
+    "case": "separate-warm2",
+    "environment": "nwb",
+    "seconds": 1.0990545829990879,
+    "returncode": 0
+  },
+  {
+    "case": "separate-warm2",
+    "environment": "aind",
+    "seconds": 1.1412721250089817,
+    "returncode": 0
+  }
+]

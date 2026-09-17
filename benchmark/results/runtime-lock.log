@@ -1,0 +1,18 @@
+✔ Updated lock file
+Environment: aind                                        
+  - (conda) git        2.55.0 pl5321h3795e67_3           
+  - (conda) git-annex  10.20260717 nodep_h1234567_0      
+  - (conda) libxcrypt  4.4.38 h280c20c_0                 
+  - (conda) perl       5.32.1 9_h7cc23a3_perl5           
+                                                         
+Environment: core                                        
+  - (conda) git        2.55.0 pl5321h3795e67_3           
+  - (conda) git-annex  10.20260717 nodep_h1234567_0      
+  - (conda) libxcrypt  4.4.38 h280c20c_0                 
+  - (conda) perl       5.32.1 9_h7cc23a3_perl5           
+                                                         
+Environment: nwb                                         
+  - (conda) git        2.55.0 pl5321h3795e67_3           
+  - (conda) git-annex  10.20260717 nodep_h1234567_0      
+  - (conda) libxcrypt  4.4.38 h280c20c_0                 
+  - (conda) perl       5.32.1 9_h7cc23a3_perl5           

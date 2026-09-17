@@ -1,0 +1,77 @@
+#0 building with "dandi-pixi-bench" instance using docker-container driver
+
+#1 [internal] load build definition from Dockerfile.baseline
+#1 transferring dockerfile: 3.93kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 0.1s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32
+#3 resolve docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32 done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/neurodebian:trixie
+#4 DONE 0.1s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 77B done
+#5 DONE 0.0s
+
+#6 [core 1/7] FROM docker.io/library/neurodebian:trixie@sha256:90442b03d1539d20325c20279ec1b8a05267bdedcbdf3a6a79bab51496096d28
+#6 resolve docker.io/library/neurodebian:trixie@sha256:90442b03d1539d20325c20279ec1b8a05267bdedcbdf3a6a79bab51496096d28 done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 2.83kB done
+#7 DONE 0.0s
+
+#8 [core 7/7] RUN pip install "/opt/dandi-cache-utils[s3,archive]"
+#8 CACHED
+
+#9 [core 5/7] COPY repos/dandi-cache-utils/src /opt/dandi-cache-utils/src
+#9 CACHED
+
+#10 [core 2/7] RUN apt-get update     && apt-get install -y --no-install-recommends         ca-certificates         git         git-annex-standalone         python3         python3-pip         python3-venv     && rm -rf /var/lib/apt/lists/*
+#10 CACHED
+
+#11 [core 3/7] RUN python3 -m venv "/opt/venv"
+#11 CACHED
+
+#12 [core 4/7] COPY repos/dandi-cache-utils/pyproject.toml repos/dandi-cache-utils/README.md /opt/dandi-cache-utils/
+#12 CACHED
+
+#13 [core 6/7] RUN chmod +x /opt/dandi-cache-utils/src/dandi_cache_utils/pipeline/*.sh
+#13 CACHED
+
+#14 [nwb 1/1] RUN pip install "/opt/dandi-cache-utils[nwb]"
+#14 CACHED
+
+#15 [nwb-cache 1/2] COPY repos/valid-nwb-file-to-number-of-groups/envs/pyproject.toml /tmp/build/pyproject.toml
+#15 DONE 0.0s
+
+#16 [nwb-cache 2/2] RUN pip install /tmp/build && rm -rf /tmp/build
+#16 0.362 Processing /tmp/build
+#16 0.365   Installing build dependencies: started
+#16 1.736   Installing build dependencies: finished with status 'done'
+#16 1.737   Getting requirements to build wheel: started
+#16 2.086   Getting requirements to build wheel: finished with status 'done'
+#16 2.087   Preparing metadata (pyproject.toml): started
+#16 2.299   Preparing metadata (pyproject.toml): finished with status 'done'
+#16 2.303 Building wheels for collected packages: valid-nwb-file-to-number-of-groups
+#16 2.303   Building wheel for valid-nwb-file-to-number-of-groups (pyproject.toml): started
+#16 2.531   Building wheel for valid-nwb-file-to-number-of-groups (pyproject.toml): finished with status 'done'
+#16 2.532   Created wheel for valid-nwb-file-to-number-of-groups: filename=valid_nwb_file_to_number_of_groups-0.1.0-py3-none-any.whl size=1297 sha256=2dc17c112cb8bff75e15aa1b38c6624e095a2be5ae9c0adfb219f3018bdf2c27
+#16 2.532   Stored in directory: /tmp/pip-ephem-wheel-cache-fggkw48d/wheels/42/3b/90/614567dfd92fde5cfa8077714452698d7c0501dbc78eecd2bd
+#16 2.536 Successfully built valid-nwb-file-to-number-of-groups
+#16 2.597 Installing collected packages: valid-nwb-file-to-number-of-groups
+#16 2.613 Successfully installed valid-nwb-file-to-number-of-groups-0.1.0
+#16 DONE 2.7s
+
+#17 exporting to oci image format
+#17 exporting layers 0.0s done
+#17 exporting manifest sha256:685ddff3e173e57476af53387b86b57e9464e09ce416d3f84d8b93eeb235b167 done
+#17 exporting config sha256:c9f1d77a0e563d3f748c1ebc9016b04593386acf0b917cb20ebd8d0c93133409 done
+#17 sending tarball
+#17 sending tarball 3.2s done
+#17 DONE 3.3s

@@ -1,0 +1,4 @@
+@EXPLICIT
+https://conda.anaconda.org/conda-forge/noarch/aiobotocore-3.9.1-pyh5ded981_0.conda#c218b16350158646adad1baef9eabf2d
+https://conda.anaconda.org/conda-forge/noarch/aioitertools-0.13.0-pyhd8ed1ab_0.conda#65d5134ff98cb3727022a4f23993a2e6
+https://conda.anaconda.org/conda-forge/noarch/s3fs-2026.7.0-pyhd8ed1ab_0.conda#893188352b6005db7a50fadb5d7da4da

@@ -1,0 +1,126 @@
+{
+  "name": "runtime-aind-initial",
+  "variant": "runtime",
+  "target": "aind",
+  "case": "initial",
+  "seconds": 5.3406464160070755,
+  "returncode": 0,
+  "timestamp": "2026-09-17T20:37:56.662831+00:00",
+  "command": [
+    "docker",
+    "buildx",
+    "build",
+    "--builder",
+    "dandi-pixi-bench",
+    "--platform",
+    "linux/amd64",
+    "--progress",
+    "plain",
+    "--provenance=false",
+    "--file",
+    "/Users/johnlee/code/CON/dandi-cache/benchmark/Dockerfile.runtime",
+    "--target",
+    "aind",
+    "--tag",
+    "dandi-bench:runtime-aind",
+    "--output",
+    "type=oci,dest=/Users/johnlee/code/CON/dandi-cache/benchmark/results/runtime-aind-initial.tar,compression=gzip,compression-level=6,force-compression=true",
+    "/Users/johnlee/code/CON/dandi-cache/benchmark"
+  ],
+  "layers": [
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:6310eb16bf4251731feab01e8f633bf5e2d75a657ccad97f420b1f83cce457be",
+      "size": 29792658
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:f50aec8b8008c9a62186e57cdd6e45f052703e95050b572cb2b941570b0c864a",
+      "size": 263131223
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:1871e42da388eb20d2a733d3c08b42221ccde71d539afc7c02356b9ed0eb819b",
+      "size": 471306
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:0970fd297d36d10ff03733aeb8fcac0823d2fb591ec28b27265be98c8adfee16",
+      "size": 6805621
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:5a6331124fcbefd3db11e6b0e2c773720141f617610df123367d5e70c8d79fbd",
+      "size": 2677
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:89602727cb0c584c0011ae2ce712e6c6021724ca57cba4af3c95f114df81a3e2",
+      "size": 36753
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:211cb9b8faf728affdcc4cf2f858bb4d9ac6af078c81e629bc5d4c85da80943c",
+      "size": 105496
+    }
+  ],
+  "compressed_bytes": 300345734,
+  "history": [
+    {
+      "created": "2026-08-24T00:00:00Z",
+      "created_by": "# debian.sh --arch 'amd64' out/ 'trixie' '@1787529600'",
+      "comment": "debuerreotype 0.17"
+    },
+    {
+      "created": "2026-09-17T20:37:28.777418711Z",
+      "created_by": "ENV PATH=/opt/env/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin CONDA_PREFIX=/opt/env PIP_NO_CACHE_DIR=1 PIP_DISABLE_PIP_VERSION_CHECK=1 DANDI_CACHE_UTILS_DIR=/opt/dandi-cache-utils",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-09-17T20:37:28.777418711Z",
+      "created_by": "RUN /bin/sh -c micromamba create --ssl-verify /tmp/bootstrap-ca.pem -y -p /opt/env --file /tmp/core.txt     && rm -rf /root/.local/share/mamba /root/.cache # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-09-17T20:37:48.954588138Z",
+      "created_by": "RUN /bin/sh -c micromamba install --ssl-verify /opt/env/ssl/cacert.pem -y -p /opt/env --file /tmp/nwb.txt     && pip install --no-deps --require-hashes -r /tmp/remfile.txt     && rm -rf /root/.local/share/mamba /root/.cache # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-09-17T20:37:53.899112584Z",
+      "created_by": "RUN /bin/sh -c micromamba install --ssl-verify /opt/env/ssl/cacert.pem -y -p /opt/env --file /tmp/aind.txt     && rm -rf /root/.local/share/mamba /root/.cache # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-09-17T20:37:53.915640959Z",
+      "created_by": "COPY repos/dandi-cache-utils/pyproject.toml repos/dandi-cache-utils/README.md /opt/dandi-cache-utils/ # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-09-17T20:37:53.925796251Z",
+      "created_by": "COPY repos/dandi-cache-utils/src /opt/dandi-cache-utils/src # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-09-17T20:37:54.650064251Z",
+      "created_by": "RUN /bin/sh -c chmod +x /opt/dandi-cache-utils/src/dandi_cache_utils/pipeline/*.sh     && pip install --no-deps --no-build-isolation /opt/dandi-cache-utils # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-09-17T20:37:54.650064251Z",
+      "created_by": "CMD [\"python\" \"--version\"]",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    }
+  ],
+  "diff_ids": [
+    "sha256:411a86676185cb54d695a805b238194a64e9b77e0c723f3802fbb87d333ea0b3",
+    "sha256:11c4ab425971061705119d8c4ee486d1b7566025a56e58839dbcc0ec20c4646d",
+    "sha256:9648bdb61c6e075dff11b1274118b58120ee0ee4f4a31927e6c601d03c8a6642",
+    "sha256:29ef9660e5560942e736de59dbeaf9efe59600214b0884ac523ef12d0a40d7dd",
+    "sha256:353ca66d849ea5e0a82b17f06cc4fdeb5fa80bb402848e1043ef215a4cd28517",
+    "sha256:57c73ba218f1795ca3bdb678f6db6c9601281f6e14c6e7e4d88803f681c47c1c",
+    "sha256:e4cdecf9d565a27db43cc6ec72c29a9b29e43a3e4f0753977938694e05a46714"
+  ]
+}

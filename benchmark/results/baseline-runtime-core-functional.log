@@ -1,0 +1,7 @@
+2026-09-17T20:41:59Z INFO Logging to /tmp/tmp72ssffd0/logs/testing_2026-09-17T20-41-59Z.log.
+2026-09-17T20:41:59Z INFO Update dandiset-id-to-total-size (base directory /tmp/tmp72ssffd0; testing mode).
+2026-09-17T20:41:59Z INFO Loaded 2 usage paths and 2 asset sizes.
+2026-09-17T20:41:59Z INFO Totalling asset sizes across 1 Dandisets.
+2026-09-17T20:41:59Z INFO Wrote 1 records to /tmp/tmp72ssffd0/derivatives/testing_dandiset_id_to_total_size.jsonl in 0.0 min (peak memory 36 MiB).
+2026-09-17T20:41:59Z INFO 0 Dandisets have at least one content ID without a resolved size.
+core: functional fixture passed

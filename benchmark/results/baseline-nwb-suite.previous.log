@@ -1,0 +1,24 @@
+..........................................................F............. [ 59%]
+.................................................                        [100%]
+=================================== FAILURES ===================================
+_______ test_every_example_compiles[valid-nwb-file-to-number-of-groups] ________
+
+example = PosixPath('/bench/repos/dandi-cache-utils/docs/examples/valid-nwb-file-to-number-of-groups')
+
+    @pytest.mark.ai_generated
+    @pytest.mark.parametrize("example", EXAMPLES, ids=lambda path: path.name)
+    def test_every_example_compiles(example):
+>       assert compileall.compile_dir(str(example / "code"), quiet=1), f"{example.name} has a syntax error"
+E       AssertionError: valid-nwb-file-to-number-of-groups has a syntax error
+E       assert False
+E        +  where False = <function compile_dir at 0x7fffe15a1d00>('/bench/repos/dandi-cache-utils/docs/examples/valid-nwb-file-to-number-of-groups/code', quiet=1)
+E        +    where <function compile_dir at 0x7fffe15a1d00> = compileall.compile_dir
+E        +    and   '/bench/repos/dandi-cache-utils/docs/examples/valid-nwb-file-to-number-of-groups/code' = str((PosixPath('/bench/repos/dandi-cache-utils/docs/examples/valid-nwb-file-to-number-of-groups') / 'code'))
+
+tests/test_examples.py:47: AssertionError
+----------------------------- Captured stdout call -----------------------------
+*** Error compiling '/bench/repos/dandi-cache-utils/docs/examples/valid-nwb-file-to-number-of-groups/code/update.py'...
+OSError: [Errno 30] Read-only file system: '/bench/repos/dandi-cache-utils/docs/examples/valid-nwb-file-to-number-of-groups/code/__pycache__'
+=========================== short test summary info ============================
+FAILED tests/test_examples.py::test_every_example_compiles[valid-nwb-file-to-number-of-groups]
+1 failed, 120 passed in 0.32s

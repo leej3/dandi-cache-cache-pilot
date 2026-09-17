@@ -1,0 +1,675 @@
+#0 building with "dandi-pixi-bench" instance using docker-container driver
+
+#1 [internal] load build definition from Dockerfile.runtime
+#1 transferring dockerfile: 2.85kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 0.2s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32
+#3 resolve docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32 done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/debian:trixie-slim
+#4 DONE 0.1s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 77B done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 24.50kB done
+#6 DONE 0.0s
+
+#7 [core-env 1/2] FROM docker.io/library/debian:trixie-slim@sha256:d7e12182ce18b85b93007c1dedf31f2d29e01ccf3182cc4017c709b6259bc132
+#7 resolve docker.io/library/debian:trixie-slim@sha256:d7e12182ce18b85b93007c1dedf31f2d29e01ccf3182cc4017c709b6259bc132 done
+#7 CACHED
+
+#8 [core-env 2/2] RUN --mount=type=bind,source=tooling/micromamba,target=/usr/local/bin/micromamba     --mount=type=bind,source=runtime/specs/core_linux-64_conda_spec.txt,target=/tmp/core.txt     --mount=type=bind,source=tooling/bootstrap-ca.pem,target=/tmp/bootstrap-ca.pem     micromamba create --ssl-verify /tmp/bootstrap-ca.pem -y -p /opt/env --file /tmp/core.txt     && rm -rf /root/.local/share/mamba /root/.cache
+#8 0.147 Transaction
+#8 0.147 
+#8 0.147   Prefix: /opt/env
+#8 0.147 
+#8 0.147   Updating specs:
+#8 0.147 
+#8 0.147    - tzdata==2026c=h151e31d_0
+#8 0.147    - libzlib==1.3.2=h25fd6f3_3
+#8 0.147    - libgomp==16.2.0=he0feb66_5
+#8 0.147    - _openmp_mutex==4.5=20_gnu
+#8 0.147    - libgcc==16.2.0=ha9f2e26_5
+#8 0.147    - tk==8.6.13=noxft_h1df4ec4_4
+#8 0.147    - ncurses==6.6=hdb14827_1
+#8 0.147    - readline==8.3=hd6e31c0_1
+#8 0.147    - python_abi==3.13=9_cp313
+#8 0.147    - ca-certificates==2026.7.22=hbd8a1cb_0
+#8 0.147    - openssl==3.6.4=h781a0a9_0
+#8 0.147    - libuuid==2.42.3=hcfc3c73_0
+#8 0.147    - libstdcxx==16.2.0=h934c35e_5
+#8 0.147    - icu==78.3=py310h44b86e0_2
+#8 0.147    - libsqlite==3.53.4=h13e7031_1
+#8 0.147    - libpython==3.13.15=hdc7f604_103_cp313
+#8 0.147    - libmpdec==4.0.0=hb03c661_2
+#8 0.148    - liblzma==5.8.3=hb03c661_1
+#8 0.148    - libffi==3.7.0=h81df57d_1
+#8 0.148    - libexpat==2.8.1=hecca717_1
+#8 0.148    - zstd==1.5.7=hb78ec9c_7
+#8 0.148    - ld_impl_linux-64==2.46.1=default_hbd61a6d_102
+#8 0.148    - bzip2==1.0.8=hda65f42_10
+#8 0.148    - python==3.13.15=hf47f18c_103_cp313
+#8 0.148    - typing_extensions==4.16.0=pyhcf101f3_0
+#8 0.148    - typing-extensions==4.16.0=h69aa097_0
+#8 0.148    - pygments==2.21.0=pyhcf101f3_0
+#8 0.148    - mdurl==0.1.2=pyhd8ed1ab_1
+#8 0.148    - markdown-it-py==4.2.0=pyhd8ed1ab_0
+#8 0.148    - rich==15.0.0=pyhcf101f3_0
+#8 0.148    - click==8.5.0=pyh5ded981_0
+#8 0.148    - rich-click==1.9.9=pyhfa0c392_0
+#8 0.148    - pip==26.2.1=pyh145f28c_0
+#8 0.148    - trove-classifiers==2026.6.1.19=pyhcf101f3_0
+#8 0.148    - tomlkit==0.15.1=pyhcf101f3_0
+#8 0.148    - tomli==2.4.1=pyhcf101f3_0
+#8 0.148    - pluggy==1.6.0=pyhf9edf01_1
+#8 0.148    - pathspec==1.1.1=pyhd8ed1ab_0
+#8 0.148    - packaging==26.3=pyhc364b38_0
+#8 0.148    - editables==0.6=pyhcf101f3_0
+#8 0.148    - hatchling==1.32.0=pyhcf101f3_0
+#8 0.148    - tqdm==4.70.1=pyhfa0c392_0
+#8 0.148    - zarr-checksum==0.4.2=pyhd8ed1ab_1
+#8 0.148    - libgfortran5==16.2.0=h6b99dfc_5
+#8 0.148    - libgfortran==16.2.0=h69a702a_5
+#8 0.148    - libopenblas==0.3.34=pthreads_hf13c14d_2
+#8 0.148    - libblas==3.11.0=11_h4a7cf45_openblas
+#8 0.148    - liblapack==3.11.0=11_h47877c9_openblas
+#8 0.148    - libcblas==3.11.0=11_h0358290_openblas
+#8 0.148    - numpy==2.5.3=py313hb5f73ae_0
+#8 0.148    - msgpack-python==1.2.2=py313h2551ef2_2
+#8 0.148    - wrapt==2.4.0=py313hd42f317_2
+#8 0.148    - deprecated==1.3.1=pyhd8ed1ab_1
+#8 0.148    - numcodecs==0.15.1=py313h08cd8bf_1
+#8 0.148    - fasteners==0.20=pyhd8ed1ab_0
+#8 0.148    - asciitree==0.3.3=py_2
+#8 0.148    - zarr==2.18.7=pyhd8ed1ab_0
+#8 0.148    - propcache==0.5.2=py313h3dea7bd_0
+#8 0.148    - multidict==6.7.1=py313h3dea7bd_0
+#8 0.148    - idna==3.19=pyhcf101f3_0
+#8 0.148    - yarl==1.24.5=py313h3dea7bd_0
+#8 0.148    - pysocks==1.7.1=pyha55dd90_7
+#8 0.148    - hyperframe==6.1.0=pyhd8ed1ab_0
+#8 0.148    - hpack==4.2.0=pyhd8ed1ab_0
+#8 0.148    - h2==4.4.1=pyhcf101f3_0
+#8 0.148    - brotli-python==1.2.0=py313h2fc2bef_4
+#8 0.148    - backports.zstd==1.7.0=py313h8f72f4d_1
+#8 0.148    - urllib3==2.8.0=pyhd8ed1ab_0
+#8 0.148    - pybind11-abi==11=hc364b38_1
+#8 0.148    - ml_dtypes==0.5.4=np2py313h38606b7_2
+#8 0.148    - libwebp-base==1.6.0=hd42ef1d_1
+#8 0.148    - libabseil==20260526.0=cxx17_h0dc7533_2
+#8 0.148    - libprotobuf==7.35.1=h622638d_3
+#8 0.148    - libpng==1.6.58=h922cc85_1
+#8 0.148    - libjpeg-turbo==3.2.0=hb03c661_1
+#8 0.148    - libssh2==1.11.1=h6154650_1
+#8 0.148    - libpsl==0.23.1=hd9e3e90_1
+#8 0.148    - libev==4.33=h280c20c_3
+#8 0.148    - c-ares==1.34.8=hebe6cf0_2
+#8 0.148    - libnghttp2==1.68.1=h74cf4be_1
+#8 0.148    - libedit==3.1.20250104=pl5321h373387f_1
+#8 0.148    - keyutils==1.6.3=h7cc23a3_1
+#8 0.148    - krb5==1.22.2=hbc21106_2
+#8 0.148    - libcurl==8.22.0=ha042cf0_0
+#8 0.148    - svt-av1==4.2.0=hd2095e1_1
+#8 0.148    - rav1e==0.8.1=h1fbca29_0
+#8 0.148    - libdav1d7==1.5.4=hebe6cf0_4
+#8 0.148    - aom==3.14.1=pl5321h57e6904_2
+#8 0.148    - libavif16==1.4.2=h3ef1eba_4
+#8 0.148    - snappy==1.2.2=h03e3b7b_1
+#8 0.148    - lz4-c==1.10.0=hee9eb32_2
+#8 0.148    - blosc==1.21.6=he440d0b_1
+#8 0.148    - tensorstore==0.1.85=np2py313h50d7762_2
+#8 0.148    - tenacity==9.1.4=pyhcf101f3_0
+#8 0.148    - semantic_version==2.10.0=pyhd8ed1ab_0
+#8 0.148    - ruamel.yaml.clib==0.2.15=py313hd42f317_5
+#8 0.148    - ruamel.yaml==0.19.1=pyhcf101f3_0
+#8 0.148    - charset-normalizer==3.5.1=pyhd8ed1ab_0
+#8 0.148    - certifi==2026.7.22=pyhd8ed1ab_0
+#8 0.148    - requests==2.34.2=pyhcf101f3_0
+#8 0.148    - six==1.17.0=pyhe01879c_1
+#8 0.148    - python-dateutil==2.9.0.post0=pyhe01879c_2
+#8 0.148    - rpds-py==2026.6.3=py313ha296275_2
+#8 0.148    - attrs==26.1.0=pyhcf101f3_0
+#8 0.148    - referencing==0.37.0=pyhcf101f3_0
+#8 0.148    - jsonschema-specifications==2025.9.1=pyhcf101f3_0
+#8 0.148    - jsonschema==4.26.0=pyhcf101f3_1
+#8 0.148    - wcwidth==0.8.3=pyhcf101f3_0
+#8 0.148    - jinxed==2.1.0=pyh8f84b5b_0
+#8 0.148    - blessed==1.49.0=pyh7c35ba6_0
+#8 0.148    - pyout==0.8.1=py313h78bf25f_2
+#8 0.148    - platformdirs==4.11.8=pyh5ded981_0
+#8 0.148    - pytz==2024.1=pyhd8ed1ab_0
+#8 0.148    - python-tzdata==2026.3=pyhd8ed1ab_0
+#8 0.148    - pandas==2.2.3=py313ha87cce1_1
+#8 0.148    - libaec==1.1.5=h088129d_0
+#8 0.148    - aws-c-common==0.14.3=hb03c661_0
+#8 0.148    - aws-c-sdkutils==0.2.7=h01ee8f8_3
+#8 0.148    - aws-checksums==0.2.10=h01ee8f8_5
+#8 0.148    - s2n==1.7.6=h7e3ee7f_0
+#8 0.148    - aws-c-cal==0.9.15=h6bbde05_1
+#8 0.148    - aws-c-io==0.27.5=h4f381ba_1
+#8 0.148    - aws-c-compression==0.3.2=h01ee8f8_5
+#8 0.148    - aws-c-http==0.11.0=hbe094ff_5
+#8 0.148    - aws-c-auth==0.10.4=h4610da3_2
+#8 0.148    - aws-c-s3==0.13.1=h7508075_1
+#8 0.148    - hdf5==2.2.0=nompi_hc529623_100
+#8 0.148    - cached_property==2.0.1=pyhcf101f3_0
+#8 0.148    - cached-property==2.0.1=pyhcf101f3_0
+#8 0.148    - h5py==3.16.0=nompi_py313hce4e9db_104
+#8 0.148    - hdmf==6.2.0=pyhd8ed1ab_0
+#8 0.148    - pynwb==4.2.0=pyhd8ed1ab_0
+#8 0.148    - typing-inspection==0.4.4=pyhcf101f3_0
+#8 0.148    - pydantic-core==2.46.5=py313ha296275_1
+#8 0.148    - annotated-types==0.8.0=pyhd8ed1ab_0
+#8 0.148    - pydantic==2.13.5=pyhcf101f3_0
+#8 0.148    - gmp==6.3.0=hfd2156b_3
+#8 0.148    - pycryptodomex==3.23.0=py313h07c4f96_1
+#8 0.148    - yaml==0.2.5=hebe6cf0_3
+#8 0.148    - pyyaml==6.0.3=py313h3dea7bd_1
+#8 0.148    - natsort==8.4.0=pyhcf101f3_2
+#8 0.148    - isodate==0.7.2=pyhd8ed1ab_1
+#8 0.148    - threadpoolctl==3.7.0=pyhc455866_0
+#8 0.148    - hdmf_zarr==0.13.0=pyha770c72_0
+#8 0.148    - fsspec==2026.7.0=pyhd8ed1ab_0
+#8 0.148    - frozenlist==1.8.0=py313h6b9daa2_0
+#8 0.148    - aiosignal==1.4.0=pyhd8ed1ab_0
+#8 0.148    - aiohappyeyeballs==2.7.1=pyhd8ed1ab_0
+#8 0.148    - aiohttp==3.14.3=py313hd6074c6_0
+#8 0.148    - nwbinspector==0.7.0=pyhd8ed1ab_1
+#8 0.148    - backports==1.0=pyhd8ed1ab_5
+#8 0.148    - backports.tarfile==1.2.0=pyhcf101f3_2
+#8 0.148    - jaraco.context==6.1.2=pyhcf101f3_0
+#8 0.148    - more-itertools==11.1.0=pyhcf101f3_0
+#8 0.148    - jaraco.classes==3.4.0=pyhcf101f3_3
+#8 0.148    - keyrings.alt==5.0.2=pyhd8ed1ab_0
+#8 0.148    - jeepney==0.9.0=pyhd8ed1ab_0
+#8 0.148    - pcre2==10.47=h8b3dc9c_1
+#8 0.148    - libiconv==1.18=h0cb94f2_3
+#8 0.148    - libglib==2.90.0=h569388d_0
+#8 0.148    - dbus==1.16.2=he8c428d_2
+#8 0.148    - cpython==3.13.15=py313hd8ed1ab_103
+#8 0.148    - pycparser==3.0=pyhcf101f3_0
+#8 0.148    - cffi==2.1.1=py313ha52865f_3
+#8 0.148    - python-gil==3.13.15=h4df99d1_103
+#8 0.148    - _python_abi3_support==1.0=hd8ed1ab_3
+#8 0.148    - cryptography==50.0.1=py311hc91d8b8_1
+#8 0.148    - secretstorage==3.5.0=py313h78bf25f_2
+#8 0.148    - jaraco.functools==4.6.0=pyhcf101f3_0
+#8 0.148    - zipp==4.1.0=pyhcf101f3_0
+#8 0.148    - importlib_resources==7.1.0=pyhd8ed1ab_0
+#8 0.148    - importlib-metadata==9.0.1=pyhcf101f3_0
+#8 0.148    - keyring==25.7.0=pyha804496_0
+#8 0.148    - cloudpickle==3.1.2=pyhcf101f3_1
+#8 0.148    - joblib==1.6.0=pyhcf101f3_0
+#8 0.148    - interleave==0.3.0=pyhd8ed1ab_0
+#8 0.148    - humanize==4.16.0=pyhd8ed1ab_0
+#8 0.148    - fscacher==0.4.4=pyhd8ed1ab_1
+#8 0.148    - ci-info==0.4.0=pyhcf101f3_0
+#8 0.148    - etelemetry==0.3.1=pyhd8ed1ab_1
+#8 0.148    - rfc3987==1.3.8=pyhd8ed1ab_1
+#8 0.148    - python-dotenv==1.2.3=pyhcf101f3_0
+#8 0.148    - pydantic-settings==2.15.0=pyhcf101f3_0
+#8 0.148    - sniffio==1.3.1=pyhd8ed1ab_2
+#8 0.148    - dnspython==2.8.0=pyhcf101f3_0
+#8 0.148    - email-validator==2.3.0=pyhd8ed1ab_0
+#8 0.148    - dandischema==0.12.1=pyhd8ed1ab_0
+#8 0.148    - click-didyoumean==0.3.1=pyhd8ed1ab_1
+#8 0.148    - acres==0.5.0=pyhcf101f3_1
+#8 0.148    - bidsschematools==1.2.7=pyhc364b38_0
+#8 0.148    - dandi==0.78.0=py313h78bf25f_1
+#8 0.148    - jmespath==1.1.0=pyhcf101f3_1
+#8 0.148    - botocore==1.43.75=pyhd8ed1ab_0
+#8 0.148    - s3transfer==0.19.2=pyhd8ed1ab_0
+#8 0.148    - boto3==1.43.75=pyhd8ed1ab_0
+#8 0.148 
+#8 0.148 
+#8 0.152   Package                           Version  Build                    Channel         Size
+#8 0.152 ────────────────────────────────────────────────────────────────────────────────────────────
+#8 0.152   Install:
+#8 0.152 ────────────────────────────────────────────────────────────────────────────────────────────
+#8 0.152 
+#8 0.152   + _openmp_mutex                       4.5  20_gnu                   conda-forge         
+#8 0.152   + _python_abi3_support                1.0  hd8ed1ab_3               conda-forge         
+#8 0.152   + acres                             0.5.0  pyhcf101f3_1             conda-forge         
+#8 0.152   + aiohappyeyeballs                  2.7.1  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + aiohttp                          3.14.3  py313hd6074c6_0          conda-forge         
+#8 0.152   + aiosignal                         1.4.0  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + annotated-types                   0.8.0  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + aom                              3.14.1  pl5321h57e6904_2         conda-forge         
+#8 0.152   + asciitree                         0.3.3  py_2                     conda-forge         
+#8 0.152   + attrs                            26.1.0  pyhcf101f3_0             conda-forge         
+#8 0.152   + aws-c-auth                       0.10.4  h4610da3_2               conda-forge         
+#8 0.152   + aws-c-cal                        0.9.15  h6bbde05_1               conda-forge         
+#8 0.152   + aws-c-common                     0.14.3  hb03c661_0               conda-forge         
+#8 0.152   + aws-c-compression                 0.3.2  h01ee8f8_5               conda-forge         
+#8 0.152   + aws-c-http                       0.11.0  hbe094ff_5               conda-forge         
+#8 0.152   + aws-c-io                         0.27.5  h4f381ba_1               conda-forge         
+#8 0.152   + aws-c-s3                         0.13.1  h7508075_1               conda-forge         
+#8 0.152   + aws-c-sdkutils                    0.2.7  h01ee8f8_3               conda-forge         
+#8 0.152   + aws-checksums                    0.2.10  h01ee8f8_5               conda-forge         
+#8 0.152   + backports                           1.0  pyhd8ed1ab_5             conda-forge         
+#8 0.152   + backports.tarfile                 1.2.0  pyhcf101f3_2             conda-forge         
+#8 0.152   + backports.zstd                    1.7.0  py313h8f72f4d_1          conda-forge         
+#8 0.152   + bidsschematools                   1.2.7  pyhc364b38_0             conda-forge         
+#8 0.152   + blessed                          1.49.0  pyh7c35ba6_0             conda-forge         
+#8 0.152   + blosc                            1.21.6  he440d0b_1               conda-forge         
+#8 0.152   + boto3                           1.43.75  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + botocore                        1.43.75  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + brotli-python                     1.2.0  py313h2fc2bef_4          conda-forge         
+#8 0.152   + bzip2                             1.0.8  hda65f42_10              conda-forge         
+#8 0.152   + c-ares                           1.34.8  hebe6cf0_2               conda-forge         
+#8 0.152   + ca-certificates               2026.7.22  hbd8a1cb_0               conda-forge         
+#8 0.152   + cached-property                   2.0.1  pyhcf101f3_0             conda-forge         
+#8 0.152   + cached_property                   2.0.1  pyhcf101f3_0             conda-forge         
+#8 0.152   + certifi                       2026.7.22  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + cffi                              2.1.1  py313ha52865f_3          conda-forge         
+#8 0.152   + charset-normalizer                3.5.1  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + ci-info                           0.4.0  pyhcf101f3_0             conda-forge         
+#8 0.152   + click                             8.5.0  pyh5ded981_0             conda-forge         
+#8 0.152   + click-didyoumean                  0.3.1  pyhd8ed1ab_1             conda-forge         
+#8 0.152   + cloudpickle                       3.1.2  pyhcf101f3_1             conda-forge         
+#8 0.152   + cpython                         3.13.15  py313hd8ed1ab_103        conda-forge         
+#8 0.152   + cryptography                     50.0.1  py311hc91d8b8_1          conda-forge         
+#8 0.152   + dandi                            0.78.0  py313h78bf25f_1          conda-forge         
+#8 0.152   + dandischema                      0.12.1  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + dbus                             1.16.2  he8c428d_2               conda-forge         
+#8 0.152   + deprecated                        1.3.1  pyhd8ed1ab_1             conda-forge         
+#8 0.152   + dnspython                         2.8.0  pyhcf101f3_0             conda-forge         
+#8 0.152   + editables                           0.6  pyhcf101f3_0             conda-forge         
+#8 0.152   + email-validator                   2.3.0  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + etelemetry                        0.3.1  pyhd8ed1ab_1             conda-forge         
+#8 0.152   + fasteners                          0.20  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + frozenlist                        1.8.0  py313h6b9daa2_0          conda-forge         
+#8 0.152   + fscacher                          0.4.4  pyhd8ed1ab_1             conda-forge         
+#8 0.152   + fsspec                         2026.7.0  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + gmp                               6.3.0  hfd2156b_3               conda-forge         
+#8 0.152   + h2                                4.4.1  pyhcf101f3_0             conda-forge         
+#8 0.152   + h5py                             3.16.0  nompi_py313hce4e9db_104  conda-forge         
+#8 0.152   + hatchling                        1.32.0  pyhcf101f3_0             conda-forge         
+#8 0.152   + hdf5                              2.2.0  nompi_hc529623_100       conda-forge         
+#8 0.152   + hdmf                              6.2.0  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + hdmf_zarr                        0.13.0  pyha770c72_0             conda-forge         
+#8 0.152   + hpack                             4.2.0  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + humanize                         4.16.0  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + hyperframe                        6.1.0  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + icu                                78.3  py310h44b86e0_2          conda-forge         
+#8 0.152   + idna                               3.19  pyhcf101f3_0             conda-forge         
+#8 0.152   + importlib-metadata                9.0.1  pyhcf101f3_0             conda-forge         
+#8 0.152   + importlib_resources               7.1.0  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + interleave                        0.3.0  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + isodate                           0.7.2  pyhd8ed1ab_1             conda-forge         
+#8 0.152   + jaraco.classes                    3.4.0  pyhcf101f3_3             conda-forge         
+#8 0.152   + jaraco.context                    6.1.2  pyhcf101f3_0             conda-forge         
+#8 0.152   + jaraco.functools                  4.6.0  pyhcf101f3_0             conda-forge         
+#8 0.152   + jeepney                           0.9.0  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + jinxed                            2.1.0  pyh8f84b5b_0             conda-forge         
+#8 0.152   + jmespath                          1.1.0  pyhcf101f3_1             conda-forge         
+#8 0.152   + joblib                            1.6.0  pyhcf101f3_0             conda-forge         
+#8 0.152   + jsonschema                       4.26.0  pyhcf101f3_1             conda-forge         
+#8 0.152   + jsonschema-specifications      2025.9.1  pyhcf101f3_0             conda-forge         
+#8 0.152   + keyring                          25.7.0  pyha804496_0             conda-forge         
+#8 0.152   + keyrings.alt                      5.0.2  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + keyutils                          1.6.3  h7cc23a3_1               conda-forge         
+#8 0.152   + krb5                             1.22.2  hbc21106_2               conda-forge         
+#8 0.152   + ld_impl_linux-64                 2.46.1  default_hbd61a6d_102     conda-forge         
+#8 0.152   + libabseil                    20260526.0  cxx17_h0dc7533_2         conda-forge         
+#8 0.152   + libaec                            1.1.5  h088129d_0               conda-forge         
+#8 0.152   + libavif16                         1.4.2  h3ef1eba_4               conda-forge         
+#8 0.152   + libblas                          3.11.0  11_h4a7cf45_openblas     conda-forge         
+#8 0.152   + libcblas                         3.11.0  11_h0358290_openblas     conda-forge         
+#8 0.152   + libcurl                          8.22.0  ha042cf0_0               conda-forge         
+#8 0.152   + libdav1d7                         1.5.4  hebe6cf0_4               conda-forge         
+#8 0.152   + libedit                    3.1.20250104  pl5321h373387f_1         conda-forge         
+#8 0.152   + libev                              4.33  h280c20c_3               conda-forge         
+#8 0.152   + libexpat                          2.8.1  hecca717_1               conda-forge         
+#8 0.152   + libffi                            3.7.0  h81df57d_1               conda-forge         
+#8 0.152   + libgcc                           16.2.0  ha9f2e26_5               conda-forge         
+#8 0.152   + libgfortran                      16.2.0  h69a702a_5               conda-forge         
+#8 0.152   + libgfortran5                     16.2.0  h6b99dfc_5               conda-forge         
+#8 0.152   + libglib                          2.90.0  h569388d_0               conda-forge         
+#8 0.152   + libgomp                          16.2.0  he0feb66_5               conda-forge         
+#8 0.152   + libiconv                           1.18  h0cb94f2_3               conda-forge         
+#8 0.152   + libjpeg-turbo                     3.2.0  hb03c661_1               conda-forge         
+#8 0.152   + liblapack                        3.11.0  11_h47877c9_openblas     conda-forge         
+#8 0.152   + liblzma                           5.8.3  hb03c661_1               conda-forge         
+#8 0.152   + libmpdec                          4.0.0  hb03c661_2               conda-forge         
+#8 0.152   + libnghttp2                       1.68.1  h74cf4be_1               conda-forge         
+#8 0.152   + libopenblas                      0.3.34  pthreads_hf13c14d_2      conda-forge         
+#8 0.152   + libpng                           1.6.58  h922cc85_1               conda-forge         
+#8 0.152   + libprotobuf                      7.35.1  h622638d_3               conda-forge         
+#8 0.152   + libpsl                           0.23.1  hd9e3e90_1               conda-forge         
+#8 0.152   + libpython                       3.13.15  hdc7f604_103_cp313       conda-forge         
+#8 0.152   + libsqlite                        3.53.4  h13e7031_1               conda-forge         
+#8 0.152   + libssh2                          1.11.1  h6154650_1               conda-forge         
+#8 0.152   + libstdcxx                        16.2.0  h934c35e_5               conda-forge         
+#8 0.152   + libuuid                          2.42.3  hcfc3c73_0               conda-forge         
+#8 0.152   + libwebp-base                      1.6.0  hd42ef1d_1               conda-forge         
+#8 0.152   + libzlib                           1.3.2  h25fd6f3_3               conda-forge         
+#8 0.152   + lz4-c                            1.10.0  hee9eb32_2               conda-forge         
+#8 0.152   + markdown-it-py                    4.2.0  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + mdurl                             0.1.2  pyhd8ed1ab_1             conda-forge         
+#8 0.152   + ml_dtypes                         0.5.4  np2py313h38606b7_2       conda-forge         
+#8 0.152   + more-itertools                   11.1.0  pyhcf101f3_0             conda-forge         
+#8 0.152   + msgpack-python                    1.2.2  py313h2551ef2_2          conda-forge         
+#8 0.152   + multidict                         6.7.1  py313h3dea7bd_0          conda-forge         
+#8 0.152   + natsort                           8.4.0  pyhcf101f3_2             conda-forge         
+#8 0.152   + ncurses                             6.6  hdb14827_1               conda-forge         
+#8 0.152   + numcodecs                        0.15.1  py313h08cd8bf_1          conda-forge         
+#8 0.152   + numpy                             2.5.3  py313hb5f73ae_0          conda-forge         
+#8 0.152   + nwbinspector                      0.7.0  pyhd8ed1ab_1             conda-forge         
+#8 0.152   + openssl                           3.6.4  h781a0a9_0               conda-forge         
+#8 0.152   + packaging                          26.3  pyhc364b38_0             conda-forge         
+#8 0.152   + pandas                            2.2.3  py313ha87cce1_1          conda-forge         
+#8 0.152   + pathspec                          1.1.1  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + pcre2                             10.47  h8b3dc9c_1               conda-forge         
+#8 0.152   + pip                              26.2.1  pyh145f28c_0             conda-forge         
+#8 0.152   + platformdirs                     4.11.8  pyh5ded981_0             conda-forge         
+#8 0.152   + pluggy                            1.6.0  pyhf9edf01_1             conda-forge         
+#8 0.152   + propcache                         0.5.2  py313h3dea7bd_0          conda-forge         
+#8 0.152   + pybind11-abi                         11  hc364b38_1               conda-forge         
+#8 0.152   + pycparser                           3.0  pyhcf101f3_0             conda-forge         
+#8 0.152   + pycryptodomex                    3.23.0  py313h07c4f96_1          conda-forge         
+#8 0.152   + pydantic                         2.13.5  pyhcf101f3_0             conda-forge         
+#8 0.152   + pydantic-core                    2.46.5  py313ha296275_1          conda-forge         
+#8 0.152   + pydantic-settings                2.15.0  pyhcf101f3_0             conda-forge         
+#8 0.152   + pygments                         2.21.0  pyhcf101f3_0             conda-forge         
+#8 0.152   + pynwb                             4.2.0  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + pyout                             0.8.1  py313h78bf25f_2          conda-forge         
+#8 0.152   + pysocks                           1.7.1  pyha55dd90_7             conda-forge         
+#8 0.152   + python                          3.13.15  hf47f18c_103_cp313       conda-forge         
+#8 0.152   + python-dateutil             2.9.0.post0  pyhe01879c_2             conda-forge         
+#8 0.152   + python-dotenv                     1.2.3  pyhcf101f3_0             conda-forge         
+#8 0.152   + python-gil                      3.13.15  h4df99d1_103             conda-forge         
+#8 0.152   + python-tzdata                    2026.3  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + python_abi                         3.13  9_cp313                  conda-forge         
+#8 0.152   + pytz                             2024.1  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + pyyaml                            6.0.3  py313h3dea7bd_1          conda-forge         
+#8 0.152   + rav1e                             0.8.1  h1fbca29_0               conda-forge         
+#8 0.152   + readline                            8.3  hd6e31c0_1               conda-forge         
+#8 0.152   + referencing                      0.37.0  pyhcf101f3_0             conda-forge         
+#8 0.152   + requests                         2.34.2  pyhcf101f3_0             conda-forge         
+#8 0.152   + rfc3987                           1.3.8  pyhd8ed1ab_1             conda-forge         
+#8 0.152   + rich                             15.0.0  pyhcf101f3_0             conda-forge         
+#8 0.152   + rich-click                        1.9.9  pyhfa0c392_0             conda-forge         
+#8 0.152   + rpds-py                        2026.6.3  py313ha296275_2          conda-forge         
+#8 0.152   + ruamel.yaml                      0.19.1  pyhcf101f3_0             conda-forge         
+#8 0.152   + ruamel.yaml.clib                 0.2.15  py313hd42f317_5          conda-forge         
+#8 0.152   + s2n                               1.7.6  h7e3ee7f_0               conda-forge         
+#8 0.152   + s3transfer                       0.19.2  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + secretstorage                     3.5.0  py313h78bf25f_2          conda-forge         
+#8 0.152   + semantic_version                 2.10.0  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + six                              1.17.0  pyhe01879c_1             conda-forge         
+#8 0.152   + snappy                            1.2.2  h03e3b7b_1               conda-forge         
+#8 0.152   + sniffio                           1.3.1  pyhd8ed1ab_2             conda-forge         
+#8 0.152   + svt-av1                           4.2.0  hd2095e1_1               conda-forge         
+#8 0.152   + tenacity                          9.1.4  pyhcf101f3_0             conda-forge         
+#8 0.152   + tensorstore                      0.1.85  np2py313h50d7762_2       conda-forge         
+#8 0.152   + threadpoolctl                     3.7.0  pyhc455866_0             conda-forge         
+#8 0.152   + tk                               8.6.13  noxft_h1df4ec4_4         conda-forge         
+#8 0.152   + tomli                             2.4.1  pyhcf101f3_0             conda-forge         
+#8 0.152   + tomlkit                          0.15.1  pyhcf101f3_0             conda-forge         
+#8 0.152   + tqdm                             4.70.1  pyhfa0c392_0             conda-forge         
+#8 0.152   + trove-classifiers           2026.6.1.19  pyhcf101f3_0             conda-forge         
+#8 0.152   + typing-extensions                4.16.0  h69aa097_0               conda-forge         
+#8 0.152   + typing-inspection                 0.4.4  pyhcf101f3_0             conda-forge         
+#8 0.152   + typing_extensions                4.16.0  pyhcf101f3_0             conda-forge         
+#8 0.152   + tzdata                            2026c  h151e31d_0               conda-forge         
+#8 0.152   + urllib3                           2.8.0  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + wcwidth                           0.8.3  pyhcf101f3_0             conda-forge         
+#8 0.152   + wrapt                             2.4.0  py313hd42f317_2          conda-forge         
+#8 0.152   + yaml                              0.2.5  hebe6cf0_3               conda-forge         
+#8 0.152   + yarl                             1.24.5  py313h3dea7bd_0          conda-forge         
+#8 0.152   + zarr                             2.18.7  pyhd8ed1ab_0             conda-forge         
+#8 0.152   + zarr-checksum                     0.4.2  pyhd8ed1ab_1             conda-forge         
+#8 0.152   + zipp                              4.1.0  pyhcf101f3_0             conda-forge         
+#8 0.152   + zstd                              1.5.7  hb78ec9c_7               conda-forge         
+#8 0.152 
+#8 0.152   Summary:
+#8 0.152 
+#8 0.152   Install: 195 packages
+#8 0.152 
+#8 0.152   Total download: 0 B
+#8 0.152 
+#8 0.152 ────────────────────────────────────────────────────────────────────────────────────────────
+#8 0.152 
+#8 0.152 
+#8 0.153 warning  libmamba Security Warning: This transaction includes executing package scripts (pre/post-link/unlink) if present. These scripts can contain arbitrary code. Please ensure you trust the package sources.
+#8 0.155 
+#8 0.155 Transaction starting
+#8 6.674 Linking tzdata-2026c-h151e31d_0
+#8 6.693 Linking libzlib-1.3.2-h25fd6f3_3
+#8 6.694 Linking libgomp-16.2.0-he0feb66_5
+#8 6.694 Linking _openmp_mutex-4.5-20_gnu
+#8 6.698 Linking libgcc-16.2.0-ha9f2e26_5
+#8 6.699 Linking tk-8.6.13-noxft_h1df4ec4_4
+#8 6.717 Linking ncurses-6.6-hdb14827_1
+#8 7.426 Linking readline-8.3-hd6e31c0_1
+#8 7.428 Linking python_abi-3.13-9_cp313
+#8 7.429 Linking ca-certificates-2026.7.22-hbd8a1cb_0
+#8 7.429 Linking openssl-3.6.4-h781a0a9_0
+#8 7.450 Linking libuuid-2.42.3-hcfc3c73_0
+#8 7.451 Linking libstdcxx-16.2.0-h934c35e_5
+#8 7.451 Linking icu-78.3-py310h44b86e0_2
+#8 7.460 Linking libsqlite-3.53.4-h13e7031_1
+#8 7.461 Linking libpython-3.13.15-hdc7f604_103_cp313
+#8 7.541 Linking libmpdec-4.0.0-hb03c661_2
+#8 7.542 Linking liblzma-5.8.3-hb03c661_1
+#8 7.543 Linking libffi-3.7.0-h81df57d_1
+#8 7.543 Linking libexpat-2.8.1-hecca717_1
+#8 7.544 Linking zstd-1.5.7-hb78ec9c_7
+#8 7.545 Linking ld_impl_linux-64-2.46.1-default_hbd61a6d_102
+#8 7.563 Linking bzip2-1.0.8-hda65f42_10
+#8 7.565 Linking python-3.13.15-hf47f18c_103_cp313
+#8 7.742 Linking typing_extensions-4.16.0-pyhcf101f3_0
+#8 7.751 Linking typing-extensions-4.16.0-h69aa097_0
+#8 7.752 Linking pygments-2.21.0-pyhcf101f3_0
+#8 7.765 Linking mdurl-0.1.2-pyhd8ed1ab_1
+#8 7.766 Linking markdown-it-py-4.2.0-pyhd8ed1ab_0
+#8 7.769 Linking rich-15.0.0-pyhcf101f3_0
+#8 7.774 Linking click-8.5.0-pyh5ded981_0
+#8 7.775 Linking rich-click-1.9.9-pyhfa0c392_0
+#8 7.776 Linking pip-26.2.1-pyh145f28c_0
+#8 7.793 Linking trove-classifiers-2026.6.1.19-pyhcf101f3_0
+#8 7.794 Linking tomlkit-0.15.1-pyhcf101f3_0
+#8 7.795 Linking tomli-2.4.1-pyhcf101f3_0
+#8 7.796 Linking pluggy-1.6.0-pyhf9edf01_1
+#8 7.797 Linking pathspec-1.1.1-pyhd8ed1ab_0
+#8 7.798 Linking packaging-26.3-pyhc364b38_0
+#8 7.800 Linking editables-0.6-pyhcf101f3_0
+#8 7.801 Linking hatchling-1.32.0-pyhcf101f3_0
+#8 7.806 Linking tqdm-4.70.1-pyhfa0c392_0
+#8 8.027 Linking zarr-checksum-0.4.2-pyhd8ed1ab_1
+#8 8.028 Linking libgfortran5-16.2.0-h6b99dfc_5
+#8 8.029 Linking libgfortran-16.2.0-h69a702a_5
+#8 8.029 Linking libopenblas-0.3.34-pthreads_hf13c14d_2
+#8 8.030 Linking libblas-3.11.0-11_h4a7cf45_openblas
+#8 8.225 Linking liblapack-3.11.0-11_h47877c9_openblas
+#8 8.401 Linking libcblas-3.11.0-11_h0358290_openblas
+#8 8.554 Linking numpy-2.5.3-py313hb5f73ae_0
+#8 8.616 Linking msgpack-python-1.2.2-py313h2551ef2_2
+#8 8.618 Linking wrapt-2.4.0-py313hd42f317_2
+#8 8.620 Linking deprecated-1.3.1-pyhd8ed1ab_1
+#8 8.621 Linking numcodecs-0.15.1-py313h08cd8bf_1
+#8 8.631 Linking fasteners-0.20-pyhd8ed1ab_0
+#8 8.633 Linking asciitree-0.3.3-py_2
+#8 8.636 Linking zarr-2.18.7-pyhd8ed1ab_0
+#8 8.641 Linking propcache-0.5.2-py313h3dea7bd_0
+#8 8.643 Linking multidict-6.7.1-py313h3dea7bd_0
+#8 8.644 Linking idna-3.19-pyhcf101f3_0
+#8 8.645 Linking yarl-1.24.5-py313h3dea7bd_0
+#8 8.647 Linking pysocks-1.7.1-pyha55dd90_7
+#8 8.648 Linking hyperframe-6.1.0-pyhd8ed1ab_0
+#8 8.651 Linking hpack-4.2.0-pyhd8ed1ab_0
+#8 8.654 Linking h2-4.4.1-pyhcf101f3_0
+#8 8.656 Linking brotli-python-1.2.0-py313h2fc2bef_4
+#8 8.657 Linking backports.zstd-1.7.0-py313h8f72f4d_1
+#8 8.659 Linking urllib3-2.8.0-pyhd8ed1ab_0
+#8 8.661 Linking pybind11-abi-11-hc364b38_1
+#8 8.662 Linking ml_dtypes-0.5.4-np2py313h38606b7_2
+#8 8.663 Linking libwebp-base-1.6.0-hd42ef1d_1
+#8 8.665 Linking libabseil-20260526.0-cxx17_h0dc7533_2
+#8 8.730 Linking libprotobuf-7.35.1-h622638d_3
+#8 8.750 Linking libpng-1.6.58-h922cc85_1
+#8 8.751 Linking libjpeg-turbo-3.2.0-hb03c661_1
+#8 8.753 Linking libssh2-1.11.1-h6154650_1
+#8 8.758 Linking libpsl-0.23.1-hd9e3e90_1
+#8 8.759 Linking libev-4.33-h280c20c_3
+#8 8.760 Linking c-ares-1.34.8-hebe6cf0_2
+#8 8.764 Linking libnghttp2-1.68.1-h74cf4be_1
+#8 8.765 Linking libedit-3.1.20250104-pl5321h373387f_1
+#8 8.767 Linking keyutils-1.6.3-h7cc23a3_1
+#8 8.769 Linking krb5-1.22.2-hbc21106_2
+#8 8.780 Linking libcurl-8.22.0-ha042cf0_0
+#8 8.783 Linking svt-av1-4.2.0-hd2095e1_1
+#8 8.784 Linking rav1e-0.8.1-h1fbca29_0
+#8 8.785 Linking libdav1d7-1.5.4-hebe6cf0_4
+#8 8.785 Linking aom-3.14.1-pl5321h57e6904_2
+#8 8.786 Linking libavif16-1.4.2-h3ef1eba_4
+#8 8.787 Linking snappy-1.2.2-h03e3b7b_1
+#8 8.787 Linking lz4-c-1.10.0-hee9eb32_2
+#8 8.788 Linking blosc-1.21.6-he440d0b_1
+#8 8.789 Linking tensorstore-0.1.85-np2py313h50d7762_2
+#8 8.790 Linking tenacity-9.1.4-pyhcf101f3_0
+#8 8.791 Linking semantic_version-2.10.0-pyhd8ed1ab_0
+#8 8.793 Linking ruamel.yaml.clib-0.2.15-py313hd42f317_5
+#8 8.793 Linking ruamel.yaml-0.19.1-pyhcf101f3_0
+#8 8.797 Linking charset-normalizer-3.5.1-pyhd8ed1ab_0
+#8 8.798 Linking certifi-2026.7.22-pyhd8ed1ab_0
+#8 8.800 Linking requests-2.34.2-pyhcf101f3_0
+#8 8.802 Linking six-1.17.0-pyhe01879c_1
+#8 8.802 Linking python-dateutil-2.9.0.post0-pyhe01879c_2
+#8 8.807 Linking rpds-py-2026.6.3-py313ha296275_2
+#8 8.815 Linking attrs-26.1.0-pyhcf101f3_0
+#8 8.818 Linking referencing-0.37.0-pyhcf101f3_0
+#8 8.833 Linking jsonschema-specifications-2025.9.1-pyhcf101f3_0
+#8 8.836 Linking jsonschema-4.26.0-pyhcf101f3_1
+#8 8.839 Linking wcwidth-0.8.3-pyhcf101f3_0
+#8 8.841 Linking jinxed-2.1.0-pyh8f84b5b_0
+#8 8.845 Linking blessed-1.49.0-pyh7c35ba6_0
+#8 8.848 Linking pyout-0.8.1-py313h78bf25f_2
+#8 8.851 Linking platformdirs-4.11.8-pyh5ded981_0
+#8 8.853 Linking pytz-2024.1-pyhd8ed1ab_0
+#8 8.881 Linking python-tzdata-2026.3-pyhd8ed1ab_0
+#8 8.908 Linking pandas-2.2.3-py313ha87cce1_1
+#8 9.006 Linking libaec-1.1.5-h088129d_0
+#8 9.008 Linking aws-c-common-0.14.3-hb03c661_0
+#8 9.011 Linking aws-c-sdkutils-0.2.7-h01ee8f8_3
+#8 9.012 Linking aws-checksums-0.2.10-h01ee8f8_5
+#8 9.013 Linking s2n-1.7.6-h7e3ee7f_0
+#8 9.014 Linking aws-c-cal-0.9.15-h6bbde05_1
+#8 9.015 Linking aws-c-io-0.27.5-h4f381ba_1
+#8 9.017 Linking aws-c-compression-0.3.2-h01ee8f8_5
+#8 9.018 Linking aws-c-http-0.11.0-hbe094ff_5
+#8 9.020 Linking aws-c-auth-0.10.4-h4610da3_2
+#8 9.021 Linking aws-c-s3-0.13.1-h7508075_1
+#8 9.023 Linking hdf5-2.2.0-nompi_hc529623_100
+#8 9.044 Linking cached_property-2.0.1-pyhcf101f3_0
+#8 9.045 Linking cached-property-2.0.1-pyhcf101f3_0
+#8 9.046 Linking h5py-3.16.0-nompi_py313hce4e9db_104
+#8 9.051 Linking hdmf-6.2.0-pyhd8ed1ab_0
+#8 9.054 Linking pynwb-4.2.0-pyhd8ed1ab_0
+#8 9.060 Linking typing-inspection-0.4.4-pyhcf101f3_0
+#8 9.061 Linking pydantic-core-2.46.5-py313ha296275_1
+#8 9.062 Linking annotated-types-0.8.0-pyhd8ed1ab_0
+#8 9.062 Linking pydantic-2.13.5-pyhcf101f3_0
+#8 9.067 Linking gmp-6.3.0-hfd2156b_3
+#8 9.068 Linking pycryptodomex-3.23.0-py313h07c4f96_1
+#8 9.088 Linking yaml-0.2.5-hebe6cf0_3
+#8 9.089 Linking pyyaml-6.0.3-py313h3dea7bd_1
+#8 9.090 Linking natsort-8.4.0-pyhcf101f3_2
+#8 9.092 Linking isodate-0.7.2-pyhd8ed1ab_1
+#8 9.093 Linking threadpoolctl-3.7.0-pyhc455866_0
+#8 9.094 Linking hdmf_zarr-0.13.0-pyha770c72_0
+#8 9.095 Linking fsspec-2026.7.0-pyhd8ed1ab_0
+#8 9.098 Linking frozenlist-1.8.0-py313h6b9daa2_0
+#8 9.099 Linking aiosignal-1.4.0-pyhd8ed1ab_0
+#8 9.100 Linking aiohappyeyeballs-2.7.1-pyhd8ed1ab_0
+#8 9.101 Linking aiohttp-3.14.3-py313hd6074c6_0
+#8 9.106 Linking nwbinspector-0.7.0-pyhd8ed1ab_1
+#8 9.109 Linking backports-1.0-pyhd8ed1ab_5
+#8 9.109 Linking backports.tarfile-1.2.0-pyhcf101f3_2
+#8 9.110 Linking jaraco.context-6.1.2-pyhcf101f3_0
+#8 9.111 Linking more-itertools-11.1.0-pyhcf101f3_0
+#8 9.112 Linking jaraco.classes-3.4.0-pyhcf101f3_3
+#8 9.113 Linking keyrings.alt-5.0.2-pyhd8ed1ab_0
+#8 9.114 Linking jeepney-0.9.0-pyhd8ed1ab_0
+#8 9.116 Linking pcre2-10.47-h8b3dc9c_1
+#8 9.129 Linking libiconv-1.18-h0cb94f2_3
+#8 9.135 Linking libglib-2.90.0-h569388d_0
+#8 9.175 Linking dbus-1.16.2-he8c428d_2
+#8 9.183 Linking cpython-3.13.15-py313hd8ed1ab_103
+#8 9.184 Linking pycparser-3.0-pyhcf101f3_0
+#8 9.191 Linking cffi-2.1.1-py313ha52865f_3
+#8 9.194 Linking python-gil-3.13.15-h4df99d1_103
+#8 9.194 Linking _python_abi3_support-1.0-hd8ed1ab_3
+#8 9.195 Linking cryptography-50.0.1-py311hc91d8b8_1
+#8 9.205 Linking secretstorage-3.5.0-py313h78bf25f_2
+#8 9.206 Linking jaraco.functools-4.6.0-pyhcf101f3_0
+#8 9.207 Linking zipp-4.1.0-pyhcf101f3_0
+#8 9.209 Linking importlib_resources-7.1.0-pyhd8ed1ab_0
+#8 9.211 Linking importlib-metadata-9.0.1-pyhcf101f3_0
+#8 9.212 Linking keyring-25.7.0-pyha804496_0
+#8 9.216 Linking cloudpickle-3.1.2-pyhcf101f3_1
+#8 9.218 Linking joblib-1.6.0-pyhcf101f3_0
+#8 9.223 Linking interleave-0.3.0-pyhd8ed1ab_0
+#8 9.224 Linking humanize-4.16.0-pyhd8ed1ab_0
+#8 9.231 Linking fscacher-0.4.4-pyhd8ed1ab_1
+#8 9.232 Linking ci-info-0.4.0-pyhcf101f3_0
+#8 9.233 Linking etelemetry-0.3.1-pyhd8ed1ab_1
+#8 9.234 Linking rfc3987-1.3.8-pyhd8ed1ab_1
+#8 9.236 Linking python-dotenv-1.2.3-pyhcf101f3_0
+#8 9.238 Linking pydantic-settings-2.15.0-pyhcf101f3_0
+#8 9.242 Linking sniffio-1.3.1-pyhd8ed1ab_2
+#8 9.245 Linking dnspython-2.8.0-pyhcf101f3_0
+#8 9.254 Linking email-validator-2.3.0-pyhd8ed1ab_0
+#8 9.256 Linking dandischema-0.12.1-pyhd8ed1ab_0
+#8 9.258 Linking click-didyoumean-0.3.1-pyhd8ed1ab_1
+#8 9.259 Linking acres-0.5.0-pyhcf101f3_1
+#8 9.260 Linking bidsschematools-1.2.7-pyhc364b38_0
+#8 9.265 Linking dandi-0.78.0-py313h78bf25f_1
+#8 9.280 Linking jmespath-1.1.0-pyhcf101f3_1
+#8 9.281 Linking botocore-1.43.75-pyhd8ed1ab_0
+#8 9.377 Linking s3transfer-0.19.2-pyhd8ed1ab_0
+#8 9.378 Linking boto3-1.43.75-pyhd8ed1ab_0
+#8 9.430 
+#8 9.430 Transaction finished
+#8 9.430 
+#8 DONE 10.2s
+
+#9 [core 1/3] COPY repos/dandi-cache-utils/pyproject.toml repos/dandi-cache-utils/README.md /opt/dandi-cache-utils/
+#9 DONE 0.1s
+
+#10 [core 2/3] COPY repos/dandi-cache-utils/src /opt/dandi-cache-utils/src
+#10 DONE 0.0s
+
+#11 [core 3/3] RUN chmod +x /opt/dandi-cache-utils/src/dandi_cache_utils/pipeline/*.sh     && pip install --no-deps --no-build-isolation /opt/dandi-cache-utils
+#11 0.370 Processing ./opt/dandi-cache-utils
+#11 0.373   Preparing metadata (pyproject.toml): started
+#11 0.551   Preparing metadata (pyproject.toml): finished with status 'done'
+#11 0.557 Building wheels for collected packages: dandi-cache-utils
+#11 0.557   Building wheel for dandi-cache-utils (pyproject.toml): started
+#11 0.652   Building wheel for dandi-cache-utils (pyproject.toml): finished with status 'done'
+#11 0.653   Created wheel for dandi-cache-utils: filename=dandi_cache_utils-0.1.8-py3-none-any.whl size=47122 sha256=bd26207ae68554dd3ac0590f1007fde1c6f5c55fa1b5d575f014490771532d87
+#11 0.653   Stored in directory: /tmp/pip-ephem-wheel-cache-sfyult1y/wheels/45/1f/8c/2672006fb65fcb4b823d2aad1e9715eca14bdd90457cb3220a
+#11 0.657 Successfully built dandi-cache-utils
+#11 0.665 Installing collected packages: dandi-cache-utils
+#11 0.690 Successfully installed dandi-cache-utils-0.1.8
+#11 0.690 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#11 DONE 0.7s
+
+#12 exporting to oci image format
+#12 exporting layers
+#12 exporting layers 14.9s done
+#12 exporting manifest sha256:5e693f924cbb03a5a3c4178d0d71860e85a425c67b42d7549440e19a9f9903ea
+#12 exporting manifest sha256:5e693f924cbb03a5a3c4178d0d71860e85a425c67b42d7549440e19a9f9903ea done
+#12 exporting config sha256:9d9bc9a4d92514b7ea66ef50a3cad3449bd47d8d073223fa1fe2373dc11858cf done
+#12 sending tarball
+#12 sending tarball 1.5s done
+#12 DONE 16.4s

@@ -1,0 +1,2 @@
+dandi 0.78.0 requires bids-validator-deno, which is not installed.
+dandi 0.78.0 has requirement etelemetry>=0.2.2, but you have etelemetry 0+unknown.

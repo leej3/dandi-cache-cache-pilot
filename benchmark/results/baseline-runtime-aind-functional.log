@@ -1,0 +1,3 @@
+aind: functional fixture passed
+/opt/venv/lib/python3.13/site-packages/spikeinterface/extractors/__init__.py:59: UserWarning: Importing classes at __init__ has been deprecated in favor of only importing function-size wrappers and will be removed in 0.105.0. For developers that prefer working with the class versions of extractors they can be imported from spikeinterface.extractors.extractor_classesFor class NwbRecordingExtractor
+  warn(dep_msg)

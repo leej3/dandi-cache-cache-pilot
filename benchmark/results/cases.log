@@ -1,0 +1,40 @@
+{"name": "baseline-core-cache-warm1", "variant": "baseline", "target": "core-cache", "case": "warm1", "seconds": 3.4708602919708937, "returncode": 0, "timestamp": "2026-09-17T20:31:45.666898+00:00", "compressed_bytes": 363528510}
+{"name": "baseline-nwb-cache-warm1", "variant": "baseline", "target": "nwb-cache", "case": "warm1", "seconds": 2.5595091250143014, "returncode": 0, "timestamp": "2026-09-17T20:31:48.266482+00:00", "compressed_bytes": 390202661}
+{"name": "baseline-aind-warm1", "variant": "baseline", "target": "aind", "case": "warm1", "seconds": 2.666758832987398, "returncode": 0, "timestamp": "2026-09-17T20:31:50.977624+00:00", "compressed_bytes": 395147198}
+{"name": "pixi-core-cache-warm1", "variant": "pixi", "target": "core-cache", "case": "warm1", "seconds": 2.737967875029426, "returncode": 0, "timestamp": "2026-09-17T20:31:53.757444+00:00", "compressed_bytes": 401374646}
+{"name": "pixi-nwb-cache-warm1", "variant": "pixi", "target": "nwb-cache", "case": "warm1", "seconds": 2.603638458007481, "returncode": 0, "timestamp": "2026-09-17T20:31:56.401420+00:00", "compressed_bytes": 401823277}
+{"name": "pixi-aind-warm1", "variant": "pixi", "target": "aind", "case": "warm1", "seconds": 2.776894540991634, "returncode": 0, "timestamp": "2026-09-17T20:31:59.218540+00:00", "compressed_bytes": 408629058}
+{"name": "baseline-core-cache-warm2", "variant": "baseline", "target": "core-cache", "case": "warm2", "seconds": 2.4235008339746855, "returncode": 0, "timestamp": "2026-09-17T20:32:01.684290+00:00", "compressed_bytes": 363528510}
+{"name": "baseline-nwb-cache-warm2", "variant": "baseline", "target": "nwb-cache", "case": "warm2", "seconds": 2.596389000013005, "returncode": 0, "timestamp": "2026-09-17T20:32:04.319382+00:00", "compressed_bytes": 390202661}
+{"name": "baseline-aind-warm2", "variant": "baseline", "target": "aind", "case": "warm2", "seconds": 2.6890247910050675, "returncode": 0, "timestamp": "2026-09-17T20:32:07.051219+00:00", "compressed_bytes": 395147198}
+{"name": "pixi-core-cache-warm2", "variant": "pixi", "target": "core-cache", "case": "warm2", "seconds": 2.714955208997708, "returncode": 0, "timestamp": "2026-09-17T20:32:09.805959+00:00", "compressed_bytes": 401374646}
+{"name": "pixi-nwb-cache-warm2", "variant": "pixi", "target": "nwb-cache", "case": "warm2", "seconds": 2.664221875020303, "returncode": 0, "timestamp": "2026-09-17T20:32:12.545027+00:00", "compressed_bytes": 401823277}
+{"name": "pixi-aind-warm2", "variant": "pixi", "target": "aind", "case": "warm2", "seconds": 2.8739668339840136, "returncode": 0, "timestamp": "2026-09-17T20:32:15.464456+00:00", "compressed_bytes": 408629058}
+{"name": "baseline-core-source", "variant": "baseline", "target": "core", "case": "source", "seconds": 50.84686525003053, "returncode": 0, "timestamp": "2026-09-17T20:33:06.376961+00:00", "compressed_bytes": 363526099}
+{"name": "baseline-nwb-source", "variant": "baseline", "target": "nwb", "case": "source", "seconds": 15.930413417052478, "returncode": 0, "timestamp": "2026-09-17T20:33:22.368980+00:00", "compressed_bytes": 390200183}
+{"name": "baseline-core-cache-source", "variant": "baseline", "target": "core-cache", "case": "source", "seconds": 5.865433083032258, "returncode": 0, "timestamp": "2026-09-17T20:33:28.297700+00:00", "compressed_bytes": 363527797}
+{"name": "baseline-nwb-cache-source", "variant": "baseline", "target": "nwb-cache", "case": "source", "seconds": 5.618067833012901, "returncode": 0, "timestamp": "2026-09-17T20:33:33.981630+00:00", "compressed_bytes": 390201940}
+{"name": "baseline-aind-source", "variant": "baseline", "target": "aind", "case": "source", "seconds": 8.483913749980275, "returncode": 0, "timestamp": "2026-09-17T20:33:42.529707+00:00", "compressed_bytes": 395146395}
+{"name": "pixi-core-source", "variant": "pixi", "target": "core", "case": "source", "seconds": 3.989797957998235, "returncode": 0, "timestamp": "2026-09-17T20:33:46.583748+00:00", "compressed_bytes": 401374746}
+{"name": "pixi-nwb-source", "variant": "pixi", "target": "nwb", "case": "source", "seconds": 3.7989912920165807, "returncode": 0, "timestamp": "2026-09-17T20:33:50.435388+00:00", "compressed_bytes": 401823369}
+{"name": "pixi-core-cache-source", "variant": "pixi", "target": "core-cache", "case": "source", "seconds": 2.724040041968692, "returncode": 0, "timestamp": "2026-09-17T20:33:53.209226+00:00", "compressed_bytes": 401374746}
+{"name": "pixi-nwb-cache-source", "variant": "pixi", "target": "nwb-cache", "case": "source", "seconds": 2.6593662499799393, "returncode": 0, "timestamp": "2026-09-17T20:33:55.915125+00:00", "compressed_bytes": 401823369}
+{"name": "pixi-aind-source", "variant": "pixi", "target": "aind", "case": "source", "seconds": 3.762582499999553, "returncode": 0, "timestamp": "2026-09-17T20:33:59.723770+00:00", "compressed_bytes": 408629166}
+ WARN ignoring PyPI package remfile since PyPI packages are not supported
+ WARN ignoring PyPI package remfile since PyPI packages are not supported
+{
+  "core->nwb": {
+    "unchanged": 199,
+    "added": 4,
+    "removed": 0
+  },
+  "nwb->aind": {
+    "unchanged": 203,
+    "added": 5,
+    "removed": 0
+  }
+}
+{"name": "baseline-nwb-cache-nwb-addition", "variant": "baseline", "target": "nwb-cache", "case": "nwb-addition", "seconds": 17.91909191699233, "returncode": 0, "timestamp": "2026-09-17T20:34:19.320820+00:00", "compressed_bytes": 390386410}
+{"name": "baseline-aind-nwb-addition", "variant": "baseline", "target": "aind", "case": "nwb-addition", "seconds": 7.922368041006848, "returncode": 0, "timestamp": "2026-09-17T20:34:27.308085+00:00", "compressed_bytes": 395330775}
+{"name": "pixi-nwb-cache-nwb-addition", "variant": "pixi", "target": "nwb-cache", "case": "nwb-addition", "seconds": 5.868520041985903, "returncode": 0, "timestamp": "2026-09-17T20:34:33.238401+00:00", "compressed_bytes": 402013611}
+{"name": "pixi-aind-nwb-addition", "variant": "pixi", "target": "aind", "case": "nwb-addition", "seconds": 6.029888208024204, "returncode": 0, "timestamp": "2026-09-17T20:34:39.327646+00:00", "compressed_bytes": 408819357}

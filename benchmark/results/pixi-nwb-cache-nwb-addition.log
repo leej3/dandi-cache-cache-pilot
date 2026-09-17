@@ -1,0 +1,109 @@
+#0 building with "dandi-pixi-bench" instance using docker-container driver
+
+#1 [internal] load build definition from Dockerfile.pixi
+#1 transferring dockerfile: 2.81kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 0.1s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32
+#3 resolve docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32 done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/debian:trixie-slim
+#4 DONE 0.1s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 77B done
+#5 DONE 0.0s
+
+#6 [core-env 1/2] FROM docker.io/library/debian:trixie-slim@sha256:d7e12182ce18b85b93007c1dedf31f2d29e01ccf3182cc4017c709b6259bc132
+#6 resolve docker.io/library/debian:trixie-slim@sha256:d7e12182ce18b85b93007c1dedf31f2d29e01ccf3182cc4017c709b6259bc132 done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 18.66MB 0.1s done
+#7 DONE 0.1s
+
+#8 [core-env 2/2] RUN --mount=type=bind,source=tooling/micromamba,target=/usr/local/bin/micromamba     --mount=type=bind,source=specs/core_linux-64_conda_spec.txt,target=/tmp/core.txt     --mount=type=bind,source=tooling/bootstrap-ca.pem,target=/tmp/bootstrap-ca.pem     micromamba create --ssl-verify /tmp/bootstrap-ca.pem -y -p /opt/env --file /tmp/core.txt     && rm -rf /root/.local/share/mamba /root/.cache
+#8 CACHED
+
+#9 [nwb-env 1/1] RUN --mount=type=bind,source=tooling/micromamba,target=/usr/local/bin/micromamba     --mount=type=bind,source=specs/nwb-delta.txt,target=/tmp/nwb.txt     --mount=type=bind,source=specs/remfile.txt,target=/tmp/remfile.txt     micromamba install --ssl-verify /opt/env/ssl/cacert.pem -y -p /opt/env --file /tmp/nwb.txt     && pip install --no-deps --require-hashes -r /tmp/remfile.txt     && rm -rf /root/.local/share/mamba /root/.cache
+#9 0.875 Transaction
+#9 0.875 
+#9 0.876   Prefix: /opt/env
+#9 0.876 
+#9 0.876   Updating specs:
+#9 0.876 
+#9 0.876    - aiobotocore==3.9.1=pyh5ded981_0
+#9 0.876    - aioitertools==0.13.0=pyhd8ed1ab_0
+#9 0.876    - humanfriendly==10.0=pyh707e725_8
+#9 0.876    - s3fs==2026.7.0=pyhd8ed1ab_0
+#9 0.876 
+#9 0.876 
+#9 0.879   Package           Version  Build         Channel         Size
+#9 0.879 ─────────────────────────────────────────────────────────────────
+#9 0.879   Install:
+#9 0.879 ─────────────────────────────────────────────────────────────────
+#9 0.879 
+#9 0.879   + aiobotocore       3.9.1  pyh5ded981_0  conda-forge         
+#9 0.879   + aioitertools     0.13.0  pyhd8ed1ab_0  conda-forge         
+#9 0.879   + humanfriendly      10.0  pyh707e725_8  conda-forge         
+#9 0.879   + s3fs           2026.7.0  pyhd8ed1ab_0  conda-forge         
+#9 0.879 
+#9 0.879   Summary:
+#9 0.879 
+#9 0.879   Install: 4 packages
+#9 0.879 
+#9 0.879   Total download: 0 B
+#9 0.879 
+#9 0.879 ─────────────────────────────────────────────────────────────────
+#9 0.879 
+#9 0.879 
+#9 0.879 warning  libmamba Security Warning: This transaction includes executing package scripts (pre/post-link/unlink) if present. These scripts can contain arbitrary code. Please ensure you trust the package sources.
+#9 0.881 
+#9 0.881 Transaction starting
+#9 1.386 Linking aiobotocore-3.9.1-pyh5ded981_0
+#9 1.397 Linking aioitertools-0.13.0-pyhd8ed1ab_0
+#9 1.399 Linking humanfriendly-10.0-pyh707e725_8
+#9 1.402 Linking s3fs-2026.7.0-pyhd8ed1ab_0
+#9 1.731 
+#9 1.731 Transaction finished
+#9 1.731 
+#9 2.022 Collecting remfile==0.1.14 (from -r /tmp/remfile.txt (line 1))
+#9 2.239   Downloading remfile-0.1.14-py3-none-any.whl (13 kB)
+#9 2.260 Installing collected packages: remfile
+#9 2.281 Successfully installed remfile-0.1.14
+#9 2.282 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#9 DONE 2.4s
+
+#10 [nwb 1/3] COPY repos/dandi-cache-utils/pyproject.toml repos/dandi-cache-utils/README.md /opt/dandi-cache-utils/
+#10 DONE 0.0s
+
+#11 [nwb 2/3] COPY repos/dandi-cache-utils/src /opt/dandi-cache-utils/src
+#11 DONE 0.0s
+
+#12 [nwb 3/3] RUN chmod +x /opt/dandi-cache-utils/src/dandi_cache_utils/pipeline/*.sh     && pip install --no-deps --no-build-isolation /opt/dandi-cache-utils
+#12 0.344 Processing ./opt/dandi-cache-utils
+#12 0.346   Preparing metadata (pyproject.toml): started
+#12 0.517   Preparing metadata (pyproject.toml): finished with status 'done'
+#12 0.522 Building wheels for collected packages: dandi-cache-utils
+#12 0.523   Building wheel for dandi-cache-utils (pyproject.toml): started
+#12 0.617   Building wheel for dandi-cache-utils (pyproject.toml): finished with status 'done'
+#12 0.618   Created wheel for dandi-cache-utils: filename=dandi_cache_utils-0.1.8-py3-none-any.whl size=47122 sha256=bd26207ae68554dd3ac0590f1007fde1c6f5c55fa1b5d575f014490771532d87
+#12 0.618   Stored in directory: /tmp/pip-ephem-wheel-cache-sd2cw47y/wheels/45/1f/8c/2672006fb65fcb4b823d2aad1e9715eca14bdd90457cb3220a
+#12 0.622 Successfully built dandi-cache-utils
+#12 0.629 Installing collected packages: dandi-cache-utils
+#12 0.659 Successfully installed dandi-cache-utils-0.1.8
+#12 0.660 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#12 DONE 0.7s
+
+#13 exporting to oci image format
+#13 exporting layers 0.1s done
+#13 exporting manifest sha256:006cf0a4400b3dd13fef58e8c4a6d03b19ea9249c8e0737d460a20aee4958fef
+#13 exporting manifest sha256:006cf0a4400b3dd13fef58e8c4a6d03b19ea9249c8e0737d460a20aee4958fef done
+#13 exporting config sha256:d8b6b6d436a9ab3bfa6dbe813212244fc7e790e3b40f55ec0a4e6f3221157412 done
+#13 sending tarball
+#13 sending tarball 2.0s done
+#13 DONE 2.1s

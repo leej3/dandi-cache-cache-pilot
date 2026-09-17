@@ -1,0 +1,7 @@
+2026-09-17T20:36:18Z INFO Logging to /tmp/tmpl2chpwe2/logs/testing_2026-09-17T20-36-18Z.log.
+2026-09-17T20:36:18Z INFO Update dandiset-id-to-total-size (base directory /tmp/tmpl2chpwe2; testing mode).
+2026-09-17T20:36:18Z INFO Loaded 2 usage paths and 2 asset sizes.
+2026-09-17T20:36:18Z INFO Totalling asset sizes across 1 Dandisets.
+2026-09-17T20:36:18Z INFO Wrote 1 records to /tmp/tmpl2chpwe2/derivatives/testing_dandiset_id_to_total_size.jsonl in 0.0 min (peak memory 31 MiB).
+2026-09-17T20:36:18Z INFO 0 Dandisets have at least one content ID without a resolved size.
+core: functional fixture passed

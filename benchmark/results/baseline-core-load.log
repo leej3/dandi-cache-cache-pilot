@@ -1,0 +1,82 @@
+#0 building with "dandi-pixi-bench" instance using docker-container driver
+
+#1 [internal] load build definition from Dockerfile.baseline
+#1 transferring dockerfile: 3.93kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 0.1s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32
+#3 resolve docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32 done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/neurodebian:trixie
+#4 DONE 0.1s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 77B done
+#5 DONE 0.0s
+
+#6 [core 1/7] FROM docker.io/library/neurodebian:trixie@sha256:90442b03d1539d20325c20279ec1b8a05267bdedcbdf3a6a79bab51496096d28
+#6 resolve docker.io/library/neurodebian:trixie@sha256:90442b03d1539d20325c20279ec1b8a05267bdedcbdf3a6a79bab51496096d28 done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 1.62kB done
+#7 DONE 0.0s
+
+#8 [core 3/7] RUN python3 -m venv "/opt/venv"
+#8 CACHED
+
+#9 [core 2/7] RUN apt-get update     && apt-get install -y --no-install-recommends         ca-certificates         git         git-annex-standalone         python3         python3-pip         python3-venv     && rm -rf /var/lib/apt/lists/*
+#9 CACHED
+
+#10 [core 4/7] COPY repos/dandi-cache-utils/pyproject.toml repos/dandi-cache-utils/README.md /opt/dandi-cache-utils/
+#10 CACHED
+
+#11 [core 6/7] RUN chmod +x /opt/dandi-cache-utils/src/dandi_cache_utils/pipeline/*.sh
+#11 CACHED
+
+#12 [core 5/7] COPY repos/dandi-cache-utils/src /opt/dandi-cache-utils/src
+#12 CACHED
+
+#13 [core 7/7] RUN pip install "/opt/dandi-cache-utils[s3,archive]"
+#13 CACHED
+
+#14 exporting to docker image format
+#14 exporting layers done
+#14 exporting manifest sha256:0c820f39b234601b1e22dd462b7e7bc176a5c1f411bb176ca37f8a8907d740e7 done
+#14 exporting config sha256:e9a937e85b916a1f6e947b22dec4c4ce75ddb8d0e31cf45dcc60e45df08bf6b2 done
+#14 sending tarball
+#14 ...
+
+#15 importing to docker
+#15 loading layer 31631a95db7c 524.29kB / 49.34MB
+#15 loading layer 9dadd2e0a849 131.07kB / 10.29MB
+#15 loading layer e2a60c2ba620 2.64kB / 2.64kB
+#15 loading layer 90f549474c26 269B / 269B
+#15 loading layer e418f4adf7cd 32.77kB / 90.38kB
+#15 loading layer 87701d12054e 129.24MB / 132.29MB 2.1s
+#15 loading layer 5b1324c4e279 65.54kB / 3.53MB
+#15 loading layer cd7a3c7c6d29 2.68kB / 2.68kB
+#15 loading layer 8dabd6b774b4 32.77kB / 36.74kB
+#15 loading layer f9e2e05a92c2 6.72kB / 6.72kB
+#15 loading layer 39866c72f081 557.06kB / 167.93MB
+#15 loading layer 39866c72f081 125.89MB / 167.93MB 2.1s
+#15 loading layer cd7a3c7c6d29 2.68kB / 2.68kB 3.4s done
+#15 loading layer 31631a95db7c 49.34MB / 49.34MB 6.9s done
+#15 loading layer 9dadd2e0a849 10.29MB / 10.29MB 6.0s done
+#15 loading layer e2a60c2ba620 2.64kB / 2.64kB 5.8s done
+#15 loading layer 90f549474c26 269B / 269B 5.8s done
+#15 loading layer e418f4adf7cd 90.38kB / 90.38kB 5.8s done
+#15 loading layer 87701d12054e 132.29MB / 132.29MB 5.8s done
+#15 loading layer 5b1324c4e279 3.53MB / 3.53MB 3.6s done
+#15 loading layer 8dabd6b774b4 36.74kB / 36.74kB 3.4s done
+#15 loading layer f9e2e05a92c2 6.72kB / 6.72kB 3.4s done
+#15 loading layer 39866c72f081 167.93MB / 167.93MB 3.4s done
+#15 DONE 6.9s
+
+#14 exporting to docker image format
+#14 sending tarball 10.3s done
+#14 DONE 10.3s

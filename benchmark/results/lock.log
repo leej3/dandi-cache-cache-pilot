@@ -1,0 +1,21 @@
+✔ Updated lock file
+Environment: aind                                   
+  + (conda) aiobotocore   3.9.1 pyh5ded981_0        
+  + (conda) aioitertools  0.13.0 pyhd8ed1ab_0       
+  ~ (conda) boto3         1.43.92 pyhd8ed1ab_0  ->  1.43.75 pyhd8ed1ab_0
+  ~ (conda) botocore      1.43.92 pyhd8ed1ab_0  ->  1.43.75 pyhd8ed1ab_0
+  ~ (conda) s3fs          0.4.2 py_0            ->  2026.7.0 pyhd8ed1ab_0
+                                                    
+Environment: core                                   
+  ~ (conda) boto3         1.43.92 pyhd8ed1ab_0  ->  1.43.75 pyhd8ed1ab_0
+  ~ (conda) botocore      1.43.92 pyhd8ed1ab_0  ->  1.43.75 pyhd8ed1ab_0
+                                                    
+Environment: nwb                                    
+  + (conda) aiobotocore   3.9.1 pyh5ded981_0        
+  + (conda) aioitertools  0.13.0 pyhd8ed1ab_0       
+  ~ (conda) boto3         1.43.92 pyhd8ed1ab_0  ->  1.43.75 pyhd8ed1ab_0
+  ~ (conda) botocore      1.43.92 pyhd8ed1ab_0  ->  1.43.75 pyhd8ed1ab_0
+  ~ (conda) s3fs          0.4.2 py_0            ->  2026.7.0 pyhd8ed1ab_0
+real 1.81
+user 0.92
+sys 0.32

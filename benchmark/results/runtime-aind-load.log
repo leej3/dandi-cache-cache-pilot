@@ -1,0 +1,60 @@
+#0 building with "dandi-pixi-bench" instance using docker-container driver
+
+#1 [internal] load build definition from Dockerfile.runtime
+#1 transferring dockerfile: 2.85kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 0.1s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32
+#3 resolve docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32 done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/debian:trixie-slim
+#4 DONE 0.1s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 77B done
+#5 DONE 0.0s
+
+#6 [core-env 1/2] FROM docker.io/library/debian:trixie-slim@sha256:d7e12182ce18b85b93007c1dedf31f2d29e01ccf3182cc4017c709b6259bc132
+#6 resolve docker.io/library/debian:trixie-slim@sha256:d7e12182ce18b85b93007c1dedf31f2d29e01ccf3182cc4017c709b6259bc132 done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 2.60kB done
+#7 DONE 0.0s
+
+#8 [aind-env 1/1] RUN --mount=type=bind,source=tooling/micromamba,target=/usr/local/bin/micromamba     --mount=type=bind,source=runtime/specs/aind-delta.txt,target=/tmp/aind.txt     micromamba install --ssl-verify /opt/env/ssl/cacert.pem -y -p /opt/env --file /tmp/aind.txt     && rm -rf /root/.local/share/mamba /root/.cache
+#8 CACHED
+
+#9 [aind 2/3] COPY repos/dandi-cache-utils/src /opt/dandi-cache-utils/src
+#9 CACHED
+
+#10 [core-env 2/2] RUN --mount=type=bind,source=tooling/micromamba,target=/usr/local/bin/micromamba     --mount=type=bind,source=runtime/specs/core_linux-64_conda_spec.txt,target=/tmp/core.txt     --mount=type=bind,source=tooling/bootstrap-ca.pem,target=/tmp/bootstrap-ca.pem     micromamba create --ssl-verify /tmp/bootstrap-ca.pem -y -p /opt/env --file /tmp/core.txt     && rm -rf /root/.local/share/mamba /root/.cache
+#10 CACHED
+
+#11 [nwb-env 1/1] RUN --mount=type=bind,source=tooling/micromamba,target=/usr/local/bin/micromamba     --mount=type=bind,source=runtime/specs/nwb-delta.txt,target=/tmp/nwb.txt     --mount=type=bind,source=runtime/specs/remfile.txt,target=/tmp/remfile.txt     micromamba install --ssl-verify /opt/env/ssl/cacert.pem -y -p /opt/env --file /tmp/nwb.txt     && pip install --no-deps --require-hashes -r /tmp/remfile.txt     && rm -rf /root/.local/share/mamba /root/.cache
+#11 CACHED
+
+#12 [aind 1/3] COPY repos/dandi-cache-utils/pyproject.toml repos/dandi-cache-utils/README.md /opt/dandi-cache-utils/
+#12 CACHED
+
+#13 [aind 3/3] RUN chmod +x /opt/dandi-cache-utils/src/dandi_cache_utils/pipeline/*.sh     && pip install --no-deps --no-build-isolation /opt/dandi-cache-utils
+#13 CACHED
+
+#14 exporting to docker image format
+#14 exporting layers done
+#14 exporting manifest sha256:fb3d402be9a86551e833ca7f88faed35eb0f8b9e106bf816a136d7919b823a79 done
+#14 exporting config sha256:ab8ff4e80965b0ab9fdb432e8908ff8161d2ea891595f6a686d494debb9d8518 done
+#14 sending tarball
+#14 sending tarball 3.1s done
+#14 DONE 3.1s
+
+#15 importing to docker
+#15 loading layer 29ef9660e556 6.81MB / 6.81MB 0.4s done
+#15 loading layer 353ca66d849e 2.68kB / 2.68kB 0.0s done
+#15 loading layer 57c73ba218f1 36.75kB / 36.75kB 0.0s done
+#15 loading layer e4cdecf9d565 105.50kB / 105.50kB 0.0s done
+#15 DONE 0.4s

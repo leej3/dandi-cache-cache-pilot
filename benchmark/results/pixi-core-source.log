@@ -1,0 +1,63 @@
+#0 building with "dandi-pixi-bench" instance using docker-container driver
+
+#1 [internal] load build definition from Dockerfile.pixi
+#1 transferring dockerfile: 2.81kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 0.2s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32
+#3 resolve docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32 done
+#3 CACHED
+
+#4 [auth] library/debian:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#5 [internal] load metadata for docker.io/library/debian:trixie-slim
+#5 DONE 0.4s
+
+#6 [internal] load .dockerignore
+#6 transferring context: 77B done
+#6 DONE 0.0s
+
+#7 [core-env 1/2] FROM docker.io/library/debian:trixie-slim@sha256:d7e12182ce18b85b93007c1dedf31f2d29e01ccf3182cc4017c709b6259bc132
+#7 resolve docker.io/library/debian:trixie-slim@sha256:d7e12182ce18b85b93007c1dedf31f2d29e01ccf3182cc4017c709b6259bc132 done
+#7 DONE 0.0s
+
+#8 [internal] load build context
+#8 transferring context: 18.66MB 0.1s done
+#8 DONE 0.1s
+
+#9 [core-env 2/2] RUN --mount=type=bind,source=tooling/micromamba,target=/usr/local/bin/micromamba     --mount=type=bind,source=specs/core_linux-64_conda_spec.txt,target=/tmp/core.txt     --mount=type=bind,source=tooling/bootstrap-ca.pem,target=/tmp/bootstrap-ca.pem     micromamba create --ssl-verify /tmp/bootstrap-ca.pem -y -p /opt/env --file /tmp/core.txt     && rm -rf /root/.local/share/mamba /root/.cache
+#9 CACHED
+
+#10 [core 1/3] COPY repos/dandi-cache-utils/pyproject.toml repos/dandi-cache-utils/README.md /opt/dandi-cache-utils/
+#10 CACHED
+
+#11 [core 2/3] COPY repos/dandi-cache-utils/src /opt/dandi-cache-utils/src
+#11 DONE 0.0s
+
+#12 [core 3/3] RUN chmod +x /opt/dandi-cache-utils/src/dandi_cache_utils/pipeline/*.sh     && pip install --no-deps --no-build-isolation /opt/dandi-cache-utils
+#12 0.364 Processing ./opt/dandi-cache-utils
+#12 0.367   Preparing metadata (pyproject.toml): started
+#12 0.539   Preparing metadata (pyproject.toml): finished with status 'done'
+#12 0.544 Building wheels for collected packages: dandi-cache-utils
+#12 0.544   Building wheel for dandi-cache-utils (pyproject.toml): started
+#12 0.643   Building wheel for dandi-cache-utils (pyproject.toml): finished with status 'done'
+#12 0.644   Created wheel for dandi-cache-utils: filename=dandi_cache_utils-0.1.8-py3-none-any.whl size=47151 sha256=33d898bbcce277c007b0c504f1e53faed6b20bb0f9969a5bc282fa6f72c711df
+#12 0.644   Stored in directory: /tmp/pip-ephem-wheel-cache-ia9w58o9/wheels/45/1f/8c/2672006fb65fcb4b823d2aad1e9715eca14bdd90457cb3220a
+#12 0.648 Successfully built dandi-cache-utils
+#12 0.656 Installing collected packages: dandi-cache-utils
+#12 0.685 Successfully installed dandi-cache-utils-0.1.8
+#12 0.685 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#12 DONE 0.7s
+
+#13 exporting to oci image format
+#13 exporting layers 0.0s done
+#13 exporting manifest sha256:5bfb67c77d62f147e85e4c263ea53f2b1e948e8851c03a81233dabe0931ac0eb
+#13 exporting manifest sha256:5bfb67c77d62f147e85e4c263ea53f2b1e948e8851c03a81233dabe0931ac0eb done
+#13 exporting config sha256:7772946fb03b516552094f5bf9fc981548c35f348e41acb669588801370191a6 done
+#13 sending tarball
+#13 sending tarball 2.3s done
+#13 DONE 2.3s

@@ -1,0 +1,55 @@
+# syntax=docker/dockerfile:1
+FROM debian:trixie-slim AS core-env
+ENV PATH=/opt/env/bin:$PATH \
+    CONDA_PREFIX=/opt/env \
+    PIP_NO_CACHE_DIR=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1 \
+    DANDI_CACHE_UTILS_DIR=/opt/dandi-cache-utils
+RUN --mount=type=bind,source=tooling/micromamba,target=/usr/local/bin/micromamba \
+    --mount=type=bind,source=specs/core_linux-64_conda_spec.txt,target=/tmp/core.txt \
+    --mount=type=bind,source=tooling/bootstrap-ca.pem,target=/tmp/bootstrap-ca.pem \
+    micromamba create --ssl-verify /tmp/bootstrap-ca.pem -y -p /opt/env --file /tmp/core.txt \
+    && rm -rf /root/.local/share/mamba /root/.cache
+FROM core-env AS nwb-env
+RUN --mount=type=bind,source=tooling/micromamba,target=/usr/local/bin/micromamba \
+    --mount=type=bind,source=specs/nwb-delta.txt,target=/tmp/nwb.txt \
+    --mount=type=bind,source=specs/remfile.txt,target=/tmp/remfile.txt \
+    micromamba install --ssl-verify /opt/env/ssl/cacert.pem -y -p /opt/env --file /tmp/nwb.txt \
+    && pip install --no-deps --require-hashes -r /tmp/remfile.txt \
+    && rm -rf /root/.local/share/mamba /root/.cache
+
+FROM nwb-env AS aind-env
+RUN --mount=type=bind,source=tooling/micromamba,target=/usr/local/bin/micromamba \
+    --mount=type=bind,source=specs/aind-delta.txt,target=/tmp/aind.txt \
+    micromamba install --ssl-verify /opt/env/ssl/cacert.pem -y -p /opt/env --file /tmp/aind.txt \
+    && rm -rf /root/.local/share/mamba /root/.cache
+
+FROM core-env AS core
+COPY repos/dandi-cache-utils/pyproject.toml repos/dandi-cache-utils/README.md /opt/dandi-cache-utils/
+COPY repos/dandi-cache-utils/src /opt/dandi-cache-utils/src
+RUN chmod +x /opt/dandi-cache-utils/src/dandi_cache_utils/pipeline/*.sh \
+    && pip install --no-deps --no-build-isolation /opt/dandi-cache-utils
+CMD ["python", "--version"]
+
+
+FROM nwb-env AS nwb
+COPY repos/dandi-cache-utils/pyproject.toml repos/dandi-cache-utils/README.md /opt/dandi-cache-utils/
+COPY repos/dandi-cache-utils/src /opt/dandi-cache-utils/src
+RUN chmod +x /opt/dandi-cache-utils/src/dandi_cache_utils/pipeline/*.sh \
+    && pip install --no-deps --no-build-isolation /opt/dandi-cache-utils
+CMD ["python", "--version"]
+
+
+FROM aind-env AS aind
+COPY repos/dandi-cache-utils/pyproject.toml repos/dandi-cache-utils/README.md /opt/dandi-cache-utils/
+COPY repos/dandi-cache-utils/src /opt/dandi-cache-utils/src
+RUN chmod +x /opt/dandi-cache-utils/src/dandi_cache_utils/pipeline/*.sh \
+    && pip install --no-deps --no-build-isolation /opt/dandi-cache-utils
+CMD ["python", "--version"]
+
+
+FROM core AS core-cache
+LABEL org.opencontainers.image.source="https://github.com/dandi-cache/dandiset-id-to-total-size"
+
+FROM nwb AS nwb-cache
+LABEL org.opencontainers.image.source="https://github.com/dandi-cache/valid-nwb-file-to-number-of-groups"

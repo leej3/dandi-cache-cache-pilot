@@ -1,0 +1,62 @@
+#0 building with "dandi-pixi-bench" instance using docker-container driver
+
+#1 [internal] load build definition from Dockerfile.pixi
+#1 transferring dockerfile: 2.81kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 0.1s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32
+#3 resolve docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32 done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/debian:trixie-slim
+#4 DONE 0.1s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 77B done
+#5 DONE 0.0s
+
+#6 [core-env 1/2] FROM docker.io/library/debian:trixie-slim@sha256:d7e12182ce18b85b93007c1dedf31f2d29e01ccf3182cc4017c709b6259bc132
+#6 resolve docker.io/library/debian:trixie-slim@sha256:d7e12182ce18b85b93007c1dedf31f2d29e01ccf3182cc4017c709b6259bc132 done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 18.66MB 0.1s done
+#7 DONE 0.1s
+
+#8 [core-env 2/2] RUN --mount=type=bind,source=tooling/micromamba,target=/usr/local/bin/micromamba     --mount=type=bind,source=specs/core_linux-64_conda_spec.txt,target=/tmp/core.txt     --mount=type=bind,source=tooling/bootstrap-ca.pem,target=/tmp/bootstrap-ca.pem     micromamba create --ssl-verify /tmp/bootstrap-ca.pem -y -p /opt/env --file /tmp/core.txt     && rm -rf /root/.local/share/mamba /root/.cache
+#8 CACHED
+
+#9 [core 1/3] COPY repos/dandi-cache-utils/pyproject.toml repos/dandi-cache-utils/README.md /opt/dandi-cache-utils/
+#9 CACHED
+
+#10 [core 2/3] COPY repos/dandi-cache-utils/src /opt/dandi-cache-utils/src
+#10 CACHED
+
+#11 [core 3/3] RUN chmod +x /opt/dandi-cache-utils/src/dandi_cache_utils/pipeline/*.sh     && pip install --no-deps --no-build-isolation /opt/dandi-cache-utils
+#11 CACHED
+
+#12 exporting to docker image format
+#12 exporting layers done
+#12 exporting manifest sha256:5c7474965ce5439c347fc57ba875d46dd8ee097aae82a33994300117a2a70d28 done
+#12 exporting config sha256:dd75bbcb949c22e021d16912f59a5281de1d3a6aca4a74646df2c20110c4645f done
+#12 sending tarball
+#12 ...
+
+#13 importing to docker
+#13 loading layer 411a86676185 327.68kB / 29.79MB
+#13 loading layer 4bbe949eaf1f 212.24MB / 371.41MB 4.0s
+#13 loading layer 4bbe949eaf1f 285.21MB / 371.41MB 6.0s
+#13 loading layer 054fd02d5530 2.67kB / 2.67kB
+#13 loading layer 411a86676185 29.79MB / 29.79MB 9.3s done
+#13 loading layer 4bbe949eaf1f 371.41MB / 371.41MB 8.7s done
+#13 loading layer 054fd02d5530 2.67kB / 2.67kB 0.1s done
+#13 loading layer 895977af3b71 36.73kB / 36.73kB 0.0s done
+#13 loading layer 2198bfe4080d 128.27kB / 128.27kB 0.0s done
+#13 DONE 9.3s
+
+#12 exporting to docker image format
+#12 sending tarball 13.3s done
+#12 DONE 13.3s

@@ -1,0 +1,33 @@
+[workspace]
+name = "dandi-image-benchmark"
+channels = ["conda-forge"]
+platforms = ["linux-64"]
+
+[feature.core.dependencies]
+python = "3.13.*"
+pip = "*"
+hatchling = "*"
+git = "*"
+git-annex = "*"
+ca-certificates = "*"
+rich-click = "*"
+boto3 = "*"
+dandi = "*"
+
+[feature.nwb.dependencies]
+h5py = "*"
+hdmf_zarr = "*"
+nwbinspector = "*"
+pynwb = "*"
+s3fs = ">=2025"
+zarr = "<3"
+
+[feature.nwb.pypi-dependencies]
+remfile = "*"
+
+[feature.aind.dependencies]
+numpy = "*"
+spikeinterface = "*"
+
+[environments]
+core = { features = ["core"] }

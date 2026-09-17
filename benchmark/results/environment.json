@@ -1,0 +1,8 @@
+{
+  "host_platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "pixi": "pixi 0.76.2",
+  "target": "linux/amd64",
+  "compression": "gzip level 6, forced for every layer",
+  "installer": "micromamba 2.9.0 explicit artifact lists exported from Pixi lock; remfile hashed wheel via pip --no-deps"
+}

@@ -1,0 +1,121 @@
+{
+  "name": "pixi-nwb-cache-nwb-addition",
+  "variant": "pixi",
+  "target": "nwb-cache",
+  "case": "nwb-addition",
+  "seconds": 5.868520041985903,
+  "returncode": 0,
+  "timestamp": "2026-09-17T20:34:33.238401+00:00",
+  "command": [
+    "docker",
+    "buildx",
+    "build",
+    "--builder",
+    "dandi-pixi-bench",
+    "--platform",
+    "linux/amd64",
+    "--progress",
+    "plain",
+    "--provenance=false",
+    "--file",
+    "/Users/johnlee/code/CON/dandi-cache/benchmark/Dockerfile.pixi",
+    "--target",
+    "nwb-cache",
+    "--tag",
+    "dandi-bench:pixi-nwb-cache",
+    "--output",
+    "type=oci,dest=/Users/johnlee/code/CON/dandi-cache/benchmark/results/pixi-nwb-cache-nwb-addition.tar,compression=gzip,compression-level=6,force-compression=true",
+    "/Users/johnlee/code/CON/dandi-cache/benchmark"
+  ],
+  "layers": [
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:6310eb16bf4251731feab01e8f633bf5e2d75a657ccad97f420b1f83cce457be",
+      "size": 29792658
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:09a429f536e809fb4b542d3e2b50fba572d20df1c976bd3771645d6813e4a178",
+      "size": 371414311
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:cc27098d691d7e525321c129e5928bf4f28f4b3f4effe032d01fe34cda6ccc6b",
+      "size": 661711
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:fb9dd85eca677664459d9d755893848bfea6288626448eb4c283167747cfaea1",
+      "size": 2677
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:f4b55c4b820ba89718ad5377794ec14dcab8e9b7696361bcd24bff1bfd24f05b",
+      "size": 36755
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:d15cd5b8746a42b35cd171c5951e56dce924814f91e7b66de4ccc33f4ad46d88",
+      "size": 105499
+    }
+  ],
+  "compressed_bytes": 402013611,
+  "history": [
+    {
+      "created": "2026-08-24T00:00:00Z",
+      "created_by": "# debian.sh --arch 'amd64' out/ 'trixie' '@1787529600'",
+      "comment": "debuerreotype 0.17"
+    },
+    {
+      "created": "2026-09-17T20:29:49.513224221Z",
+      "created_by": "ENV PATH=/opt/env/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin CONDA_PREFIX=/opt/env PIP_NO_CACHE_DIR=1 PIP_DISABLE_PIP_VERSION_CHECK=1 DANDI_CACHE_UTILS_DIR=/opt/dandi-cache-utils",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-09-17T20:29:49.513224221Z",
+      "created_by": "RUN /bin/sh -c micromamba create --ssl-verify /tmp/bootstrap-ca.pem -y -p /opt/env --file /tmp/core.txt     && rm -rf /root/.local/share/mamba /root/.cache # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-09-17T20:34:30.380934587Z",
+      "created_by": "RUN /bin/sh -c micromamba install --ssl-verify /opt/env/ssl/cacert.pem -y -p /opt/env --file /tmp/nwb.txt     && pip install --no-deps --require-hashes -r /tmp/remfile.txt     && rm -rf /root/.local/share/mamba /root/.cache # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-09-17T20:34:30.394058962Z",
+      "created_by": "COPY repos/dandi-cache-utils/pyproject.toml repos/dandi-cache-utils/README.md /opt/dandi-cache-utils/ # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-09-17T20:34:30.402574837Z",
+      "created_by": "COPY repos/dandi-cache-utils/src /opt/dandi-cache-utils/src # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-09-17T20:34:31.107173462Z",
+      "created_by": "RUN /bin/sh -c chmod +x /opt/dandi-cache-utils/src/dandi_cache_utils/pipeline/*.sh     && pip install --no-deps --no-build-isolation /opt/dandi-cache-utils # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-09-17T20:34:31.107173462Z",
+      "created_by": "CMD [\"python\" \"--version\"]",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-09-17T20:34:31.107173462Z",
+      "created_by": "LABEL org.opencontainers.image.source=https://github.com/dandi-cache/valid-nwb-file-to-number-of-groups",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    }
+  ],
+  "diff_ids": [
+    "sha256:411a86676185cb54d695a805b238194a64e9b77e0c723f3802fbb87d333ea0b3",
+    "sha256:4bbe949eaf1f5fbac018c7b376eec0918be75587bcb92395ead3e206b3e4d29d",
+    "sha256:e783326fe9eaa118977b5a1657ef50a31840f6bd92dcbcb309ff679025a6d3b7",
+    "sha256:710059ad688bed59e45fd9d2d13170ee4b55eb3c0927ac13f8455f5a2923b6dd",
+    "sha256:2007deddfceededd05a6d1778626625881c23067e7bc60add7a5c9ef25632e3c",
+    "sha256:4efa853baeddf0ba83c248e5013a2f104eb192928a5765dfe9d80ae5bc7e985d"
+  ]
+}

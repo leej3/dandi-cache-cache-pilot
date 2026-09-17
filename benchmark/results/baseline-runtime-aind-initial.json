@@ -1,0 +1,239 @@
+{
+  "name": "baseline-runtime-aind-initial",
+  "variant": "baseline-runtime",
+  "target": "aind",
+  "case": "initial",
+  "seconds": 7.536767332989257,
+  "returncode": 0,
+  "timestamp": "2026-09-17T20:41:48.449999+00:00",
+  "command": [
+    "docker",
+    "buildx",
+    "build",
+    "--builder",
+    "dandi-pixi-bench",
+    "--platform",
+    "linux/amd64",
+    "--progress",
+    "plain",
+    "--provenance=false",
+    "--file",
+    "/Users/johnlee/code/CON/dandi-cache/benchmark/Dockerfile.baseline-runtime",
+    "--target",
+    "aind",
+    "--tag",
+    "dandi-bench:baseline-runtime-aind",
+    "--output",
+    "type=oci,dest=/Users/johnlee/code/CON/dandi-cache/benchmark/results/baseline-runtime-aind-initial.tar,compression=gzip,compression-level=6,force-compression=true",
+    "/Users/johnlee/code/CON/dandi-cache/benchmark"
+  ],
+  "layers": [
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:27ee9a8250487842a26b1ffa1215982ba9ae27010bce1997d52f9f8628578d17",
+      "size": 49337828
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:c88aa34e88b514a6fc663c20e2587d082385503604bd7ec752ffc94014e185af",
+      "size": 10294197
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:b60ec1baed9a52493741097e33fcc892da307fb597f9f0f4d23a8c606ce2d295",
+      "size": 2636
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:5c641e6eb7dabfded1b82e2d57c505c86d543e80107de5395f258291ce5158b2",
+      "size": 269
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:a342d6a62bb570e42252bddfdbef07b74fd7fe0d2027f42d5317aafd1d0205ac",
+      "size": 90383
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:275c22288f595a30dd1227cf5ade52a7a87f3465fafd87dec404d6386249eda8",
+      "size": 25809191
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:eef7fdcf30322bf03a5b61e53336c92a0a7503217961b04851d2429e54bdb5c7",
+      "size": 3531625
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:65aa0f9aade85bf2e796cd8aaf3eee20ff3ce896a104fa7a3d38ea5f773009af",
+      "size": 2676
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:9d7299e47d215f169b9ad14760a81e8a32da308a18d1f45dc73911a1f579850c",
+      "size": 36755
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:7df9330c9e04ad40aa0338848398ab84842b2096722ec8f6de1c10f799ffd1da",
+      "size": 6728
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:0f19a0a3770d9ae9c3e09b06ac72c9391929374b1bc55e33516ced6ceb0b19b1",
+      "size": 167930122
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:59c9d01c4faa5df97c40b557c6c6592f943f9c892ade1d8d3674d0625597e313",
+      "size": 26674113
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:78d49e71ddf12b4dfb2f58539240cfe83265b98c4ddc55daaba7826a47e981d5",
+      "size": 677
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:f4471c4d659a3e0c20abbad39121bcb184c9dbd6ad4f4b6d79ea2e43d70d926c",
+      "size": 4945494
+    }
+  ],
+  "compressed_bytes": 288662694,
+  "history": [
+    {
+      "created": "2026-08-24T00:00:00Z",
+      "created_by": "# debian.sh --arch 'amd64' out/ 'trixie' '@1787529600'",
+      "comment": "debuerreotype 0.17"
+    },
+    {
+      "created": "2026-08-25T00:54:23.645994528Z",
+      "created_by": "RUN /bin/sh -c set -x \t&& apt-get update \t&& { \t\twhich gpg \t\t|| apt-get install -y --no-install-recommends gnupg \t; } \t&& { \t\tgpg --version | grep -q '^gpg (GnuPG) 1\\.' \t\t|| apt-get install -y --no-install-recommends dirmngr \t; } \t&& rm -rf /var/lib/apt/lists/* # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-08-25T00:54:24.18152621Z",
+      "created_by": "RUN /bin/sh -c set -x \t&& export GNUPGHOME=\"$(mktemp -d)\" \t&& gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 4E9A2E702A23C7C882574536439754ED1F42AA2C \t&& mkdir -p /etc/apt/keyrings \t&& gpg --batch --export --armor 4E9A2E702A23C7C882574536439754ED1F42AA2C > /etc/apt/keyrings/neurodebian.asc \t&& rm -rf \"$GNUPGHOME\" # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-08-25T00:54:24.253400326Z",
+      "created_by": "RUN /bin/sh -c { \techo 'deb [signed-by=/etc/apt/keyrings/neurodebian.asc] http://neuro.debian.net/debian trixie main'; \techo 'deb [signed-by=/etc/apt/keyrings/neurodebian.asc] http://neuro.debian.net/debian data main'; \techo '#deb-src [signed-by=/etc/apt/keyrings/neurodebian.asc] http://neuro.debian.net/debian-devel trixie main'; } > /etc/apt/sources.list.d/neurodebian.sources.list # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-08-25T00:54:27.103383249Z",
+      "created_by": "RUN /bin/sh -c set -x \t&& apt-get update \t&& apt-get install -y --no-install-recommends neurodebian-freeze eatmydata \t&& ln -s /usr/bin/eatmydata /usr/local/bin/apt-get \t&& rm -rf /var/lib/apt/lists/* # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-09-17T20:40:35.55282834Z",
+      "created_by": "LABEL org.opencontainers.image.source=https://github.com/dandi-cache/dandi-cache-utils",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-09-17T20:40:35.55282834Z",
+      "created_by": "LABEL org.opencontainers.image.description=The shared runtime environment and orchestration for every DANDI Cache.",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-09-17T20:40:35.55282834Z",
+      "created_by": "RUN /bin/sh -c apt-get update     && apt-get install -y --no-install-recommends         ca-certificates         python3         python3-pip         python3-venv     && rm -rf /var/lib/apt/lists/* # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-09-17T20:40:35.55282834Z",
+      "created_by": "ENV VIRTUAL_ENV=/opt/venv PIP_NO_CACHE_DIR=1 PIP_DISABLE_PIP_VERSION_CHECK=1",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-09-17T20:40:37.166042632Z",
+      "created_by": "RUN /bin/sh -c python3 -m venv \"${VIRTUAL_ENV}\" # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-09-17T20:40:37.166042632Z",
+      "created_by": "ENV PATH=/opt/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-09-17T20:40:37.166042632Z",
+      "created_by": "ENV DANDI_CACHE_UTILS_DIR=/opt/dandi-cache-utils",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-09-17T20:40:37.186950715Z",
+      "created_by": "COPY repos/dandi-cache-utils/pyproject.toml repos/dandi-cache-utils/README.md /opt/dandi-cache-utils/ # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-09-17T20:40:37.196242757Z",
+      "created_by": "COPY repos/dandi-cache-utils/src /opt/dandi-cache-utils/src # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-09-17T20:40:37.266945507Z",
+      "created_by": "RUN /bin/sh -c chmod +x ${DANDI_CACHE_UTILS_DIR}/src/dandi_cache_utils/pipeline/*.sh # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-09-17T20:41:15.688663094Z",
+      "created_by": "RUN /bin/sh -c pip install \"${DANDI_CACHE_UTILS_DIR}[s3,archive]\" # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-09-17T20:41:15.688663094Z",
+      "created_by": "CMD [\"python\" \"--version\"]",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-09-17T20:41:15.688663094Z",
+      "created_by": "LABEL org.opencontainers.image.description=The shared DANDI Cache runtime, with the remote NWB reading stack.",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-09-17T20:41:38.249745299Z",
+      "created_by": "RUN /bin/sh -c pip install \"${DANDI_CACHE_UTILS_DIR}[nwb]\" # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-09-17T20:41:38.249745299Z",
+      "created_by": "CMD [\"python\" \"--version\"]",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-09-17T20:41:41.445234342Z",
+      "created_by": "COPY repos/qualifying-aind-content-ids/envs/pyproject.toml /tmp/build/pyproject.toml # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-09-17T20:41:46.489714345Z",
+      "created_by": "RUN /bin/sh -c pip install /tmp/build && rm -rf /tmp/build # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    }
+  ],
+  "diff_ids": [
+    "sha256:31631a95db7cd650d1c826f269b9e93b57d9f418128bf7c5499b4403be4d44d0",
+    "sha256:9dadd2e0a849df2623b13ccd2759cad441ebfe1ad9e8214be03e2f7df3074cf0",
+    "sha256:e2a60c2ba620a29486d324b863b30129a81dd83f97d4a6132d5f41f21c81e55f",
+    "sha256:90f549474c26986ec0aa119da8b7601fd5dce53b01b0d72f0db9551506576180",
+    "sha256:e418f4adf7cd835bfc125670fd3976388dba9d2ff1820bc0a988c1c301b73a7e",
+    "sha256:4f13dbcd8b34581bc06bc97925e431b283819c831075dedd5945a0db9f513103",
+    "sha256:03ff64c7b9323fb8a4495737b9044e167436c9d7b8db8f75900a3772cebc9563",
+    "sha256:57a7dea09734337c430b1cdcff380fe3d4765c4bee6cea3d889776d29d5c9a69",
+    "sha256:dc111e0c34184f14208c5f7f9b4251174d6e2fd0ca994cd913e5064a1e497cd3",
+    "sha256:5c3d499671d3226f63d3a287ef8661f54086ec1f1c34b0ed7af61d2a0588be63",
+    "sha256:9ff48cd321d878b59866c55dacbc8934d3aa8ebd3e93a669585908c65f890dcc",
+    "sha256:6c4e6c31931853dedb62a68b2a6290580fd66a4072029bb66c6762183ed7a7a2",
+    "sha256:9a32e2675fd1215d526213be3287d122cb7ce97877b91a209835cd0e7b7e90d5",
+    "sha256:3891085a34edb49268b2c7297c0c97141accf367d0c98a39f0615bc8804e56c9"
+  ]
+}

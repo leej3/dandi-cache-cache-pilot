@@ -1,0 +1,44 @@
+..........................................................F............. [ 59%]
+.................................................                        [100%]
+=================================== FAILURES ===================================
+_______ test_every_example_compiles[valid-nwb-file-to-number-of-groups] ________
+
+example = PosixPath('/bench/repos/dandi-cache-utils/docs/examples/valid-nwb-file-to-number-of-groups')
+
+    @pytest.mark.ai_generated
+    @pytest.mark.parametrize("example", EXAMPLES, ids=lambda path: path.name)
+    def test_every_example_compiles(example):
+>       assert compileall.compile_dir(str(example / "code"), quiet=1), f"{example.name} has a syntax error"
+E       AssertionError: valid-nwb-file-to-number-of-groups has a syntax error
+E       assert False
+E        +  where False = <function compile_dir at 0x7fffe1288ae0>('/bench/repos/dandi-cache-utils/docs/examples/valid-nwb-file-to-number-of-groups/code', quiet=1)
+E        +    where <function compile_dir at 0x7fffe1288ae0> = compileall.compile_dir
+E        +    and   '/bench/repos/dandi-cache-utils/docs/examples/valid-nwb-file-to-number-of-groups/code' = str((PosixPath('/bench/repos/dandi-cache-utils/docs/examples/valid-nwb-file-to-number-of-groups') / 'code'))
+
+tests/test_examples.py:47: AssertionError
+----------------------------- Captured stdout call -----------------------------
+*** Error compiling '/bench/repos/dandi-cache-utils/docs/examples/valid-nwb-file-to-number-of-groups/code/update.py'...
+OSError: [Errno 30] Read-only file system: '/bench/repos/dandi-cache-utils/docs/examples/valid-nwb-file-to-number-of-groups/code/__pycache__'
+=============================== warnings summary ===============================
+tests/test_nwb.py::test_the_zarr_walk_reproduces_the_caches
+  /bench/repos/dandi-cache-utils/tests/test_nwb.py:185: ZarrDeprecationWarning: Use Group.create_array instead.
+    root.create_dataset("top", shape=(2,), dtype="i4")
+
+tests/test_nwb.py::test_the_zarr_walk_reproduces_the_caches
+tests/test_nwb.py::test_the_zarr_walk_reproduces_the_caches
+tests/test_nwb.py::test_the_zarr_walk_reproduces_the_caches
+  /opt/venv/lib/python3.13/site-packages/zarr/core/group.py:2762: ZarrDeprecationWarning: Use AsyncGroup.create_array instead.
+    return Array(self._sync(self._async_group.create_dataset(name, **kwargs)))
+
+tests/test_nwb.py::test_the_zarr_walk_reproduces_the_caches
+  /bench/repos/dandi-cache-utils/tests/test_nwb.py:187: ZarrDeprecationWarning: Use Group.create_array instead.
+    nested.create_dataset("inner", shape=(2,), dtype="i4")
+
+tests/test_nwb.py::test_the_zarr_walk_reproduces_the_caches
+  /bench/repos/dandi-cache-utils/tests/test_nwb.py:188: ZarrDeprecationWarning: Use Group.create_array instead.
+    nested.create_group("deeper").create_dataset("leaf", shape=(2,), dtype="i4")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_examples.py::test_every_example_compiles[valid-nwb-file-to-number-of-groups]
+1 failed, 120 passed, 6 warnings in 0.32s

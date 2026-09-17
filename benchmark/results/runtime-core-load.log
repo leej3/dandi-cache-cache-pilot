@@ -1,0 +1,57 @@
+#0 building with "dandi-pixi-bench" instance using docker-container driver
+
+#1 [internal] load build definition from Dockerfile.runtime
+#1 transferring dockerfile: 2.85kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 0.3s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32
+#3 resolve docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32 0.0s done
+#3 CACHED
+
+#4 [auth] library/debian:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#5 [internal] load metadata for docker.io/library/debian:trixie-slim
+#5 DONE 0.4s
+
+#6 [internal] load .dockerignore
+#6 transferring context: 77B done
+#6 DONE 0.0s
+
+#7 [core-env 1/2] FROM docker.io/library/debian:trixie-slim@sha256:d7e12182ce18b85b93007c1dedf31f2d29e01ccf3182cc4017c709b6259bc132
+#7 resolve docker.io/library/debian:trixie-slim@sha256:d7e12182ce18b85b93007c1dedf31f2d29e01ccf3182cc4017c709b6259bc132 done
+#7 DONE 0.0s
+
+#8 [internal] load build context
+#8 transferring context: 1.85kB done
+#8 DONE 0.0s
+
+#9 [core-env 2/2] RUN --mount=type=bind,source=tooling/micromamba,target=/usr/local/bin/micromamba     --mount=type=bind,source=runtime/specs/core_linux-64_conda_spec.txt,target=/tmp/core.txt     --mount=type=bind,source=tooling/bootstrap-ca.pem,target=/tmp/bootstrap-ca.pem     micromamba create --ssl-verify /tmp/bootstrap-ca.pem -y -p /opt/env --file /tmp/core.txt     && rm -rf /root/.local/share/mamba /root/.cache
+#9 CACHED
+
+#10 [core 1/3] COPY repos/dandi-cache-utils/pyproject.toml repos/dandi-cache-utils/README.md /opt/dandi-cache-utils/
+#10 CACHED
+
+#11 [core 2/3] COPY repos/dandi-cache-utils/src /opt/dandi-cache-utils/src
+#11 CACHED
+
+#12 [core 3/3] RUN chmod +x /opt/dandi-cache-utils/src/dandi_cache_utils/pipeline/*.sh     && pip install --no-deps --no-build-isolation /opt/dandi-cache-utils
+#12 CACHED
+
+#13 exporting to docker image format
+#13 exporting layers done
+#13 exporting manifest sha256:5e693f924cbb03a5a3c4178d0d71860e85a425c67b42d7549440e19a9f9903ea done
+#13 exporting config sha256:9d9bc9a4d92514b7ea66ef50a3cad3449bd47d8d073223fa1fe2373dc11858cf done
+#13 sending tarball
+#13 sending tarball 8.5s done
+#13 DONE 8.5s
+
+#14 importing to docker
+#14 loading layer 11c4ab425971 263.13MB / 263.13MB 5.7s done
+#14 loading layer ce2cc0ffd931 2.68kB / 2.68kB 0.0s done
+#14 loading layer bbcf25e5c5f7 36.76kB / 36.76kB 0.0s done
+#14 loading layer 95ff2d9bc934 128.28kB / 128.28kB 0.0s done
+#14 DONE 5.7s

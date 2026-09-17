@@ -1,0 +1,74 @@
+#0 building with "dandi-pixi-bench" instance using docker-container driver
+
+#1 [internal] load build definition from Dockerfile.baseline
+#1 transferring dockerfile: 3.93kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 0.1s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32
+#3 resolve docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32 done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/neurodebian:trixie
+#4 DONE 0.1s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 77B done
+#5 DONE 0.0s
+
+#6 [core 1/7] FROM docker.io/library/neurodebian:trixie@sha256:90442b03d1539d20325c20279ec1b8a05267bdedcbdf3a6a79bab51496096d28
+#6 resolve docker.io/library/neurodebian:trixie@sha256:90442b03d1539d20325c20279ec1b8a05267bdedcbdf3a6a79bab51496096d28 done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 2.73kB done
+#7 DONE 0.0s
+
+#8 [core 5/7] COPY repos/dandi-cache-utils/src /opt/dandi-cache-utils/src
+#8 CACHED
+
+#9 [core 2/7] RUN apt-get update     && apt-get install -y --no-install-recommends         ca-certificates         git         git-annex-standalone         python3         python3-pip         python3-venv     && rm -rf /var/lib/apt/lists/*
+#9 CACHED
+
+#10 [core 4/7] COPY repos/dandi-cache-utils/pyproject.toml repos/dandi-cache-utils/README.md /opt/dandi-cache-utils/
+#10 CACHED
+
+#11 [core 6/7] RUN chmod +x /opt/dandi-cache-utils/src/dandi_cache_utils/pipeline/*.sh
+#11 CACHED
+
+#12 [core 3/7] RUN python3 -m venv "/opt/venv"
+#12 CACHED
+
+#13 [core 7/7] RUN pip install "/opt/dandi-cache-utils[s3,archive]"
+#13 CACHED
+
+#14 [core-cache 1/2] COPY repos/dandiset-id-to-total-size/envs/pyproject.toml /tmp/build/pyproject.toml
+#14 DONE 0.0s
+
+#15 [core-cache 2/2] RUN pip install /tmp/build && rm -rf /tmp/build
+#15 0.366 Processing /tmp/build
+#15 0.370   Installing build dependencies: started
+#15 1.803   Installing build dependencies: finished with status 'done'
+#15 1.805   Getting requirements to build wheel: started
+#15 2.162   Getting requirements to build wheel: finished with status 'done'
+#15 2.164   Preparing metadata (pyproject.toml): started
+#15 2.380   Preparing metadata (pyproject.toml): finished with status 'done'
+#15 2.384 Building wheels for collected packages: dandiset-id-to-total-size
+#15 2.384   Building wheel for dandiset-id-to-total-size (pyproject.toml): started
+#15 2.610   Building wheel for dandiset-id-to-total-size (pyproject.toml): finished with status 'done'
+#15 2.611   Created wheel for dandiset-id-to-total-size: filename=dandiset_id_to_total_size-0.1.0-py3-none-any.whl size=1203 sha256=44507c0ed0735dcdca7926a322ab84e7cda2b54fd53e838556279e806efab7aa
+#15 2.611   Stored in directory: /tmp/pip-ephem-wheel-cache-y1vt8ptu/wheels/42/3b/90/614567dfd92fde5cfa8077714452698d7c0501dbc78eecd2bd
+#15 2.615 Successfully built dandiset-id-to-total-size
+#15 2.676 Installing collected packages: dandiset-id-to-total-size
+#15 2.691 Successfully installed dandiset-id-to-total-size-0.1.0
+#15 DONE 2.7s
+
+#16 exporting to oci image format
+#16 exporting layers 0.0s done
+#16 exporting manifest sha256:7cd925972e27b752c74aadb7aba66e754ab3f61a7f37f15be40121672bff75b3 done
+#16 exporting config sha256:8d2b0eb543b5659996384abd2d6d1b1f76c34f67c238f4f7050bb9f5e0f372c2 done
+#16 sending tarball
+#16 sending tarball 1.9s done
+#16 DONE 1.9s

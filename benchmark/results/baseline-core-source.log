@@ -1,0 +1,390 @@
+#0 building with "dandi-pixi-bench" instance using docker-container driver
+
+#1 [internal] load build definition from Dockerfile.baseline
+#1 transferring dockerfile:
+#1 transferring dockerfile: 3.93kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 0.1s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32
+#3 resolve docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32 done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/neurodebian:trixie
+#4 DONE 0.1s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 77B done
+#5 DONE 0.0s
+
+#6 [core 1/7] FROM docker.io/library/neurodebian:trixie@sha256:90442b03d1539d20325c20279ec1b8a05267bdedcbdf3a6a79bab51496096d28
+#6 resolve docker.io/library/neurodebian:trixie@sha256:90442b03d1539d20325c20279ec1b8a05267bdedcbdf3a6a79bab51496096d28 done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 4.65kB done
+#7 DONE 0.0s
+
+#8 [core 2/7] RUN apt-get update     && apt-get install -y --no-install-recommends         ca-certificates         git         git-annex-standalone         python3         python3-pip         python3-venv     && rm -rf /var/lib/apt/lists/*
+#8 CACHED
+
+#9 [core 3/7] RUN python3 -m venv "/opt/venv"
+#9 CACHED
+
+#10 [core 4/7] COPY repos/dandi-cache-utils/pyproject.toml repos/dandi-cache-utils/README.md /opt/dandi-cache-utils/
+#10 CACHED
+
+#11 [core 5/7] COPY repos/dandi-cache-utils/src /opt/dandi-cache-utils/src
+#11 DONE 0.0s
+
+#12 [core 6/7] RUN chmod +x /opt/dandi-cache-utils/src/dandi_cache_utils/pipeline/*.sh
+#12 DONE 0.1s
+
+#13 [core 7/7] RUN pip install "/opt/dandi-cache-utils[s3,archive]"
+#13 0.363 Processing /opt/dandi-cache-utils
+#13 0.366   Installing build dependencies: started
+#13 2.498   Installing build dependencies: finished with status 'done'
+#13 2.500   Getting requirements to build wheel: started
+#13 2.678   Getting requirements to build wheel: finished with status 'done'
+#13 2.680   Preparing metadata (pyproject.toml): started
+#13 2.874   Preparing metadata (pyproject.toml): finished with status 'done'
+#13 3.114 Collecting rich-click (from dandi-cache-utils==0.1.8)
+#13 3.300   Downloading rich_click-1.9.9-py3-none-any.whl.metadata (7.4 kB)
+#13 3.461 Collecting dandi (from dandi-cache-utils==0.1.8)
+#13 3.521   Downloading dandi-0.80.0-py3-none-any.whl.metadata (20 kB)
+#13 3.922 Collecting boto3 (from dandi-cache-utils==0.1.8)
+#13 3.978   Downloading boto3-1.43.97-py3-none-any.whl.metadata (6.6 kB)
+#13 4.293 Collecting botocore<1.44.0,>=1.43.97 (from boto3->dandi-cache-utils==0.1.8)
+#13 4.347   Downloading botocore-1.43.97-py3-none-any.whl.metadata (5.6 kB)
+#13 4.412 Collecting jmespath<2.0.0,>=0.7.1 (from boto3->dandi-cache-utils==0.1.8)
+#13 4.467   Downloading jmespath-1.1.0-py3-none-any.whl.metadata (7.6 kB)
+#13 4.543 Collecting s3transfer<0.20.0,>=0.19.0 (from boto3->dandi-cache-utils==0.1.8)
+#13 4.606   Downloading s3transfer-0.19.2-py3-none-any.whl.metadata (1.7 kB)
+#13 4.686 Collecting python-dateutil<3.0.0,>=2.1 (from botocore<1.44.0,>=1.43.97->boto3->dandi-cache-utils==0.1.8)
+#13 4.747   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+#13 4.841 Collecting urllib3!=2.2.0,<3,>=1.25.4 (from botocore<1.44.0,>=1.43.97->boto3->dandi-cache-utils==0.1.8)
+#13 4.899   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+#13 4.974 Collecting six>=1.5 (from python-dateutil<3.0.0,>=2.1->botocore<1.44.0,>=1.43.97->boto3->dandi-cache-utils==0.1.8)
+#13 5.034   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+#13 5.180 Collecting bidsschematools~=1.0 (from dandi->dandi-cache-utils==0.1.8)
+#13 5.238   Downloading bidsschematools-1.2.7-py3-none-any.whl.metadata (2.9 kB)
+#13 5.304 Collecting bids-validator-deno>=2.0.5 (from dandi->dandi-cache-utils==0.1.8)
+#13 5.363   Downloading bids_validator_deno-3.0.1-py3-none-any.whl.metadata (5.1 kB)
+#13 5.440 Collecting click>=8.2 (from dandi->dandi-cache-utils==0.1.8)
+#13 5.499   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+#13 5.567 Collecting click-didyoumean>=0.3.1 (from dandi->dandi-cache-utils==0.1.8)
+#13 5.627   Downloading click_didyoumean-0.3.1-py3-none-any.whl.metadata (3.9 kB)
+#13 5.723 Collecting dandischema!=0.13.0,<0.15.0,>=0.12.0 (from dandi->dandi-cache-utils==0.1.8)
+#13 5.784   Downloading dandischema-0.14.0-py3-none-any.whl.metadata (5.5 kB)
+#13 5.865 Collecting etelemetry>=0.2.2 (from dandi->dandi-cache-utils==0.1.8)
+#13 5.927   Downloading etelemetry-0.3.1-py3-none-any.whl.metadata (3.2 kB)
+#13 6.001 Collecting fasteners>=0.19 (from dandi->dandi-cache-utils==0.1.8)
+#13 6.062   Downloading fasteners-0.20-py3-none-any.whl.metadata (4.8 kB)
+#13 6.135 Collecting fscacher>=0.3.0 (from dandi->dandi-cache-utils==0.1.8)
+#13 6.196   Downloading fscacher-0.4.4-py3-none-any.whl.metadata (5.4 kB)
+#13 6.291 Collecting hdmf>=4.1.0 (from dandi->dandi-cache-utils==0.1.8)
+#13 6.350   Downloading hdmf-6.2.0-py3-none-any.whl.metadata (9.6 kB)
+#13 6.434 Collecting humanize>=4.5.0 (from dandi->dandi-cache-utils==0.1.8)
+#13 6.494   Downloading humanize-4.16.0-py3-none-any.whl.metadata (8.0 kB)
+#13 6.575 Collecting interleave~=0.3 (from dandi->dandi-cache-utils==0.1.8)
+#13 6.638   Downloading interleave-0.3.0-py3-none-any.whl.metadata (11 kB)
+#13 6.727 Collecting joblib>=1.3.0 (from dandi->dandi-cache-utils==0.1.8)
+#13 6.784   Downloading joblib-1.6.0-py3-none-any.whl.metadata (6.5 kB)
+#13 6.884 Collecting keyring>=23.10.0 (from dandi->dandi-cache-utils==0.1.8)
+#13 6.940   Downloading keyring-25.7.0-py3-none-any.whl.metadata (21 kB)
+#13 7.029 Collecting keyrings.alt>=5.0.0 (from dandi->dandi-cache-utils==0.1.8)
+#13 7.091   Downloading keyrings.alt-5.0.2-py3-none-any.whl.metadata (3.6 kB)
+#13 7.170 Collecting packaging>=22.0 (from dandi->dandi-cache-utils==0.1.8)
+#13 7.228   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+#13 7.310 Collecting platformdirs>=4.1.0 (from dandi->dandi-cache-utils==0.1.8)
+#13 7.368   Downloading platformdirs-4.11.9-py3-none-any.whl.metadata (5.5 kB)
+#13 7.485 Collecting pycryptodomex>=3.16.0 (from dandi->dandi-cache-utils==0.1.8)
+#13 7.544   Downloading pycryptodomex-3.23.0-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.4 kB)
+#13 7.667 Collecting pydantic~=2.9 (from dandi->dandi-cache-utils==0.1.8)
+#13 7.722   Downloading pydantic-2.13.5-py3-none-any.whl.metadata (110 kB)
+#13 7.875 Collecting pynwb>=3.1.0 (from dandi->dandi-cache-utils==0.1.8)
+#13 7.935   Downloading pynwb-4.2.0-py3-none-any.whl.metadata (9.7 kB)
+#13 8.045 Collecting numcodecs>=0.11.0 (from dandi->dandi-cache-utils==0.1.8)
+#13 8.104   Downloading numcodecs-0.17.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (3.2 kB)
+#13 8.183 Collecting nwbinspector>=0.7.0 (from dandi->dandi-cache-utils==0.1.8)
+#13 8.244   Downloading nwbinspector-0.7.2-py3-none-any.whl.metadata (6.7 kB)
+#13 8.319 Collecting pyout>=0.7.3 (from dandi->dandi-cache-utils==0.1.8)
+#13 8.381   Downloading pyout-0.8.1-py3-none-any.whl.metadata (3.0 kB)
+#13 8.481 Collecting requests~=2.30 (from dandi->dandi-cache-utils==0.1.8)
+#13 8.540   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+#13 8.736 Collecting ruamel.yaml<1,>=0.16.0 (from dandi->dandi-cache-utils==0.1.8)
+#13 8.790   Downloading ruamel_yaml-0.19.1-py3-none-any.whl.metadata (16 kB)
+#13 8.855 Collecting semantic-version>=2.10.0 (from dandi->dandi-cache-utils==0.1.8)
+#13 8.911   Downloading semantic_version-2.10.0-py2.py3-none-any.whl.metadata (9.7 kB)
+#13 8.985 Collecting tenacity>=8.2.0 (from dandi->dandi-cache-utils==0.1.8)
+#13 9.045   Downloading tenacity-9.1.4-py3-none-any.whl.metadata (1.2 kB)
+#13 9.166 Collecting tensorstore>=0.1.62 (from dandi->dandi-cache-utils==0.1.8)
+#13 9.223   Downloading tensorstore-0.1.85-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+#13 9.619 Collecting yarl<2,>=1.9.1 (from dandi->dandi-cache-utils==0.1.8)
+#13 9.675   Downloading yarl-1.25.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (111 kB)
+#13 9.770 Collecting zarr<=3.1.5,>=2.18.0 (from dandi->dandi-cache-utils==0.1.8)
+#13 9.827   Downloading zarr-3.1.5-py3-none-any.whl.metadata (10 kB)
+#13 9.897 Collecting zarr_checksum~=0.4.0 (from dandi->dandi-cache-utils==0.1.8)
+#13 9.954   Downloading zarr_checksum-0.4.7-py3-none-any.whl.metadata (2.6 kB)
+#13 10.03 Collecting acres>=0.5 (from bidsschematools~=1.0->dandi->dandi-cache-utils==0.1.8)
+#13 10.09   Downloading acres-0.5.0-py3-none-any.whl.metadata (6.2 kB)
+#13 10.20 Collecting pyyaml>=6.0 (from bidsschematools~=1.0->dandi->dandi-cache-utils==0.1.8)
+#13 10.26   Downloading pyyaml-6.0.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+#13 10.34 Collecting jsonschema[format] (from dandischema!=0.13.0,<0.15.0,>=0.12.0->dandi->dandi-cache-utils==0.1.8)
+#13 10.40   Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+#13 10.48 Collecting pydantic-settings (from dandischema!=0.13.0,<0.15.0,>=0.12.0->dandi->dandi-cache-utils==0.1.8)
+#13 10.54   Downloading pydantic_settings-2.15.0-py3-none-any.whl.metadata (3.9 kB)
+#13 10.62 Collecting annotated-types>=0.6.0 (from pydantic~=2.9->dandi->dandi-cache-utils==0.1.8)
+#13 10.68   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+#13 11.16 Collecting pydantic-core==2.46.5 (from pydantic~=2.9->dandi->dandi-cache-utils==0.1.8)
+#13 11.21   Downloading pydantic_core-2.46.5-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+#13 11.28 Collecting typing-extensions>=4.14.1 (from pydantic~=2.9->dandi->dandi-cache-utils==0.1.8)
+#13 11.34   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+#13 11.40 Collecting typing-inspection>=0.4.2 (from pydantic~=2.9->dandi->dandi-cache-utils==0.1.8)
+#13 11.46   Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+#13 11.54 Collecting email-validator>=2.0.0 (from pydantic[email]~=2.4->dandischema!=0.13.0,<0.15.0,>=0.12.0->dandi->dandi-cache-utils==0.1.8)
+#13 11.60   Downloading email_validator-2.3.0-py3-none-any.whl.metadata (26 kB)
+#13 11.75 Collecting charset_normalizer<4,>=2 (from requests~=2.30->dandi->dandi-cache-utils==0.1.8)
+#13 11.81   Downloading charset_normalizer-3.5.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (45 kB)
+#13 11.88 Collecting idna<4,>=2.5 (from requests~=2.30->dandi->dandi-cache-utils==0.1.8)
+#13 11.93   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+#13 12.02 Collecting certifi>=2023.5.7 (from requests~=2.30->dandi->dandi-cache-utils==0.1.8)
+#13 12.08   Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+#13 12.30 Collecting multidict>=4.0 (from yarl<2,>=1.9.1->dandi->dandi-cache-utils==0.1.8)
+#13 12.35   Downloading multidict-6.8.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (5.3 kB)
+#13 12.45 Collecting propcache>=0.2.1 (from yarl<2,>=1.9.1->dandi->dandi-cache-utils==0.1.8)
+#13 12.51   Downloading propcache-0.5.4-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (25 kB)
+#13 12.58 Collecting donfig>=0.8 (from zarr<=3.1.5,>=2.18.0->dandi->dandi-cache-utils==0.1.8)
+#13 12.63   Downloading donfig-0.8.1.post1-py3-none-any.whl.metadata (5.0 kB)
+#13 12.74 Collecting google-crc32c>=1.5 (from zarr<=3.1.5,>=2.18.0->dandi->dandi-cache-utils==0.1.8)
+#13 12.80   Downloading google_crc32c-1.8.0-cp313-cp313-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl.metadata (1.7 kB)
+#13 13.04 Collecting numpy>=1.26 (from zarr<=3.1.5,>=2.18.0->dandi->dandi-cache-utils==0.1.8)
+#13 13.10   Downloading numpy-2.5.3-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+#13 13.18 Collecting tqdm>=4.67.1 (from zarr_checksum~=0.4.0->dandi->dandi-cache-utils==0.1.8)
+#13 13.23   Downloading tqdm-4.70.1-py3-none-any.whl.metadata (57 kB)
+#13 13.32 Collecting deno>=2.5.0 (from bids-validator-deno>=2.0.5->dandi->dandi-cache-utils==0.1.8)
+#13 13.38   Downloading deno-2.9.7-py3-none-manylinux_2_27_x86_64.whl.metadata (5.5 kB)
+#13 13.46 Collecting dnspython>=2.0.0 (from email-validator>=2.0.0->pydantic[email]~=2.4->dandischema!=0.13.0,<0.15.0,>=0.12.0->dandi->dandi-cache-utils==0.1.8)
+#13 13.52   Downloading dnspython-2.8.0-py3-none-any.whl.metadata (5.7 kB)
+#13 13.59 Collecting ci-info>=0.2 (from etelemetry>=0.2.2->dandi->dandi-cache-utils==0.1.8)
+#13 13.67   Downloading ci_info-0.4.0-py2.py3-none-any.whl.metadata (7.2 kB)
+#13 13.76 Collecting cloudpickle>=3.0 (from joblib>=1.3.0->dandi->dandi-cache-utils==0.1.8)
+#13 13.82   Downloading cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
+#13 13.93 Collecting h5py>=3.6.0 (from hdmf>=4.1.0->dandi->dandi-cache-utils==0.1.8)
+#13 13.99   Downloading h5py-3.16.0-cp313-cp313-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
+#13 14.11 Collecting pandas>=1.4.0 (from hdmf>=4.1.0->dandi->dandi-cache-utils==0.1.8)
+#13 14.17   Downloading pandas-3.0.5-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
+#13 14.26 Collecting attrs>=22.2.0 (from jsonschema[format]->dandischema!=0.13.0,<0.15.0,>=0.12.0->dandi->dandi-cache-utils==0.1.8)
+#13 14.32   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+#13 14.38 Collecting jsonschema-specifications>=2023.03.6 (from jsonschema[format]->dandischema!=0.13.0,<0.15.0,>=0.12.0->dandi->dandi-cache-utils==0.1.8)
+#13 14.45   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+#13 14.54 Collecting referencing>=0.28.4 (from jsonschema[format]->dandischema!=0.13.0,<0.15.0,>=0.12.0->dandi->dandi-cache-utils==0.1.8)
+#13 14.60   Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+#13 14.82 Collecting rpds-py>=0.25.0 (from jsonschema[format]->dandischema!=0.13.0,<0.15.0,>=0.12.0->dandi->dandi-cache-utils==0.1.8)
+#13 14.88   Downloading rpds_py-2026.6.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+#13 14.95 Collecting SecretStorage>=3.2 (from keyring>=23.10.0->dandi->dandi-cache-utils==0.1.8)
+#13 15.00   Downloading secretstorage-3.5.0-py3-none-any.whl.metadata (4.0 kB)
+#13 15.07 Collecting jeepney>=0.4.2 (from keyring>=23.10.0->dandi->dandi-cache-utils==0.1.8)
+#13 15.13   Downloading jeepney-0.9.0-py3-none-any.whl.metadata (1.2 kB)
+#13 15.20 Collecting jaraco.classes (from keyring>=23.10.0->dandi->dandi-cache-utils==0.1.8)
+#13 15.26   Downloading jaraco.classes-3.4.0-py3-none-any.whl.metadata (2.6 kB)
+#13 15.35 Collecting jaraco.functools (from keyring>=23.10.0->dandi->dandi-cache-utils==0.1.8)
+#13 15.41   Downloading jaraco_functools-4.6.0-py3-none-any.whl.metadata (2.9 kB)
+#13 15.48 Collecting jaraco.context (from keyring>=23.10.0->dandi->dandi-cache-utils==0.1.8)
+#13 15.54   Downloading jaraco_context-6.1.2-py3-none-any.whl.metadata (4.2 kB)
+#13 15.90 Collecting aiohttp (from nwbinspector>=0.7.0->dandi->dandi-cache-utils==0.1.8)
+#13 15.96   Downloading aiohttp-3.14.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)
+#13 16.03 Collecting fsspec (from nwbinspector>=0.7.0->dandi->dandi-cache-utils==0.1.8)
+#13 16.09   Downloading fsspec-2026.7.0-py3-none-any.whl.metadata (10 kB)
+#13 16.16 Collecting isodate (from nwbinspector>=0.7.0->dandi->dandi-cache-utils==0.1.8)
+#13 16.22   Downloading isodate-0.7.2-py3-none-any.whl.metadata (11 kB)
+#13 16.31 Collecting natsort (from nwbinspector>=0.7.0->dandi->dandi-cache-utils==0.1.8)
+#13 16.37   Downloading natsort-8.4.0-py3-none-any.whl.metadata (21 kB)
+#13 16.48 Collecting blessed (from pyout>=0.7.3->dandi->dandi-cache-utils==0.1.8)
+#13 16.54   Downloading blessed-1.50.0-py3-none-any.whl.metadata (13 kB)
+#13 16.74 Collecting cryptography>=2.0 (from SecretStorage>=3.2->keyring>=23.10.0->dandi->dandi-cache-utils==0.1.8)
+#13 16.80   Downloading cryptography-50.0.1-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (4.3 kB)
+#13 16.91 Collecting cffi>=2.0.0 (from cryptography>=2.0->SecretStorage>=3.2->keyring>=23.10.0->dandi->dandi-cache-utils==0.1.8)
+#13 16.97   Downloading cffi-2.1.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+#13 17.03 Collecting pycparser (from cffi>=2.0.0->cryptography>=2.0->SecretStorage>=3.2->keyring>=23.10.0->dandi->dandi-cache-utils==0.1.8)
+#13 17.09   Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+#13 17.18 Collecting ml_dtypes>=0.5.0 (from tensorstore>=0.1.62->dandi->dandi-cache-utils==0.1.8)
+#13 17.24   Downloading ml_dtypes-0.6.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (8.8 kB)
+#13 17.33 Collecting aiohappyeyeballs>=2.5.0 (from aiohttp->nwbinspector>=0.7.0->dandi->dandi-cache-utils==0.1.8)
+#13 17.39   Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl.metadata (5.9 kB)
+#13 17.46 Collecting aiosignal>=1.4.0 (from aiohttp->nwbinspector>=0.7.0->dandi->dandi-cache-utils==0.1.8)
+#13 17.52   Downloading aiosignal-1.4.0-py3-none-any.whl.metadata (3.7 kB)
+#13 17.65 Collecting frozenlist>=1.1.1 (from aiohttp->nwbinspector>=0.7.0->dandi->dandi-cache-utils==0.1.8)
+#13 17.71   Downloading frozenlist-1.8.0-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (20 kB)
+#13 17.80 Collecting wcwidth>=0.8.3 (from blessed->pyout>=0.7.3->dandi->dandi-cache-utils==0.1.8)
+#13 17.85   Downloading wcwidth-0.8.3-py3-none-any.whl.metadata (43 kB)
+#13 17.93 Collecting jinxed<3,>=2.1 (from blessed->pyout>=0.7.3->dandi->dandi-cache-utils==0.1.8)
+#13 17.98   Downloading jinxed-2.1.0-py2.py3-none-any.whl.metadata (7.2 kB)
+#13 18.08 Collecting more-itertools (from jaraco.classes->keyring>=23.10.0->dandi->dandi-cache-utils==0.1.8)
+#13 18.14   Downloading more_itertools-11.1.0-py3-none-any.whl.metadata (41 kB)
+#13 18.22 Collecting fqdn (from jsonschema[format]->dandischema!=0.13.0,<0.15.0,>=0.12.0->dandi->dandi-cache-utils==0.1.8)
+#13 18.28   Downloading fqdn-1.5.1-py3-none-any.whl.metadata (1.4 kB)
+#13 18.35 Collecting isoduration (from jsonschema[format]->dandischema!=0.13.0,<0.15.0,>=0.12.0->dandi->dandi-cache-utils==0.1.8)
+#13 18.41   Downloading isoduration-20.11.0-py3-none-any.whl.metadata (5.7 kB)
+#13 18.48 Collecting jsonpointer>1.13 (from jsonschema[format]->dandischema!=0.13.0,<0.15.0,>=0.12.0->dandi->dandi-cache-utils==0.1.8)
+#13 18.54   Downloading jsonpointer-3.1.1-py3-none-any.whl.metadata (2.4 kB)
+#13 18.61 Collecting rfc3339-validator (from jsonschema[format]->dandischema!=0.13.0,<0.15.0,>=0.12.0->dandi->dandi-cache-utils==0.1.8)
+#13 18.67   Downloading rfc3339_validator-0.1.4-py2.py3-none-any.whl.metadata (1.5 kB)
+#13 18.74 Collecting rfc3987 (from jsonschema[format]->dandischema!=0.13.0,<0.15.0,>=0.12.0->dandi->dandi-cache-utils==0.1.8)
+#13 18.80   Downloading rfc3987-1.3.8-py2.py3-none-any.whl.metadata (7.5 kB)
+#13 18.87 Collecting uri-template (from jsonschema[format]->dandischema!=0.13.0,<0.15.0,>=0.12.0->dandi->dandi-cache-utils==0.1.8)
+#13 18.93   Downloading uri_template-1.3.0-py3-none-any.whl.metadata (8.8 kB)
+#13 19.00 Collecting webcolors>=1.11 (from jsonschema[format]->dandischema!=0.13.0,<0.15.0,>=0.12.0->dandi->dandi-cache-utils==0.1.8)
+#13 19.06   Downloading webcolors-25.10.0-py3-none-any.whl.metadata (2.2 kB)
+#13 19.16 Collecting arrow>=0.15.0 (from isoduration->jsonschema[format]->dandischema!=0.13.0,<0.15.0,>=0.12.0->dandi->dandi-cache-utils==0.1.8)
+#13 19.22   Downloading arrow-1.4.0-py3-none-any.whl.metadata (7.7 kB)
+#13 19.31 Collecting tzdata (from arrow>=0.15.0->isoduration->jsonschema[format]->dandischema!=0.13.0,<0.15.0,>=0.12.0->dandi->dandi-cache-utils==0.1.8)
+#13 19.37   Downloading tzdata-2026.4-py2.py3-none-any.whl.metadata (1.4 kB)
+#13 19.46 Collecting python-dotenv>=0.21.0 (from pydantic-settings->dandischema!=0.13.0,<0.15.0,>=0.12.0->dandi->dandi-cache-utils==0.1.8)
+#13 19.52   Downloading python_dotenv-1.2.3-py3-none-any.whl.metadata (29 kB)
+#13 19.63 Collecting rich>=12 (from rich-click->dandi-cache-utils==0.1.8)
+#13 19.68   Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+#13 19.76 Collecting markdown-it-py>=2.2.0 (from rich>=12->rich-click->dandi-cache-utils==0.1.8)
+#13 19.81   Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+#13 20.00 Collecting pygments<3.0.0,>=2.13.0 (from rich>=12->rich-click->dandi-cache-utils==0.1.8)
+#13 20.06   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+#13 20.12 Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=12->rich-click->dandi-cache-utils==0.1.8)
+#13 20.17   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+#13 20.25 Downloading boto3-1.43.97-py3-none-any.whl (140 kB)
+#13 20.32 Downloading botocore-1.43.97-py3-none-any.whl (15.8 MB)
+#13 20.87    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.8/15.8 MB 29.5 MB/s eta 0:00:00
+#13 20.92 Downloading jmespath-1.1.0-py3-none-any.whl (20 kB)
+#13 20.98 Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+#13 21.04 Downloading s3transfer-0.19.2-py3-none-any.whl (90 kB)
+#13 21.10 Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+#13 21.16 Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+#13 21.23 Downloading dandi-0.80.0-py3-none-any.whl (423 kB)
+#13 21.30 Downloading bidsschematools-1.2.7-py3-none-any.whl (194 kB)
+#13 21.36 Downloading dandischema-0.14.0-py3-none-any.whl (121 kB)
+#13 21.42 Downloading interleave-0.3.0-py3-none-any.whl (11 kB)
+#13 21.49 Downloading pydantic-2.13.5-py3-none-any.whl (472 kB)
+#13 21.56 Downloading pydantic_core-2.46.5-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+#13 21.80    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 7.9 MB/s eta 0:00:00
+#13 21.86 Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+#13 21.93 Downloading charset_normalizer-3.5.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (250 kB)
+#13 21.99 Downloading idna-3.20-py3-none-any.whl (69 kB)
+#13 22.06 Downloading ruamel_yaml-0.19.1-py3-none-any.whl (118 kB)
+#13 22.12 Downloading yarl-1.25.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (117 kB)
+#13 22.19 Downloading zarr-3.1.5-py3-none-any.whl (284 kB)
+#13 22.26 Downloading zarr_checksum-0.4.7-py3-none-any.whl (15 kB)
+#13 22.32 Downloading acres-0.5.0-py3-none-any.whl (12 kB)
+#13 22.38 Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+#13 22.44 Downloading bids_validator_deno-3.0.1-py3-none-any.whl (4.4 MB)
+#13 22.55    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.4/4.4 MB 43.0 MB/s eta 0:00:00
+#13 22.61 Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+#13 22.67 Downloading click-8.5.0-py3-none-any.whl (125 kB)
+#13 22.73 Downloading click_didyoumean-0.3.1-py3-none-any.whl (3.6 kB)
+#13 22.79 Downloading deno-2.9.7-py3-none-manylinux_2_27_x86_64.whl (41.6 MB)
+#13 23.60    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 41.6/41.6 MB 51.8 MB/s eta 0:00:00
+#13 23.65 Downloading donfig-0.8.1.post1-py3-none-any.whl (21 kB)
+#13 23.71 Downloading email_validator-2.3.0-py3-none-any.whl (35 kB)
+#13 23.76 Downloading dnspython-2.8.0-py3-none-any.whl (331 kB)
+#13 23.83 Downloading etelemetry-0.3.1-py3-none-any.whl (6.4 kB)
+#13 23.89 Downloading ci_info-0.4.0-py2.py3-none-any.whl (6.3 kB)
+#13 23.95 Downloading fasteners-0.20-py3-none-any.whl (18 kB)
+#13 24.01 Downloading fscacher-0.4.4-py3-none-any.whl (12 kB)
+#13 24.07 Downloading joblib-1.6.0-py3-none-any.whl (306 kB)
+#13 24.14 Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+#13 24.20 Downloading google_crc32c-1.8.0-cp313-cp313-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl (33 kB)
+#13 24.25 Downloading hdmf-6.2.0-py3-none-any.whl (366 kB)
+#13 24.31 Downloading h5py-3.16.0-cp313-cp313-manylinux_2_28_x86_64.whl (5.4 MB)
+#13 24.41    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 59.7 MB/s eta 0:00:00
+#13 24.46 Downloading humanize-4.16.0-py3-none-any.whl (137 kB)
+#13 24.52 Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+#13 24.59 Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+#13 24.65 Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+#13 24.71 Downloading keyring-25.7.0-py3-none-any.whl (39 kB)
+#13 24.77 Downloading jeepney-0.9.0-py3-none-any.whl (49 kB)
+#13 24.83 Downloading keyrings.alt-5.0.2-py3-none-any.whl (17 kB)
+#13 24.90 Downloading multidict-6.8.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (287 kB)
+#13 24.97 Downloading numcodecs-0.17.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.4 MB)
+#13 25.00    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 53.1 MB/s eta 0:00:00
+#13 25.06 Downloading numpy-2.5.3-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+#13 25.36    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 55.8 MB/s eta 0:00:00
+#13 25.41 Downloading nwbinspector-0.7.2-py3-none-any.whl (86 kB)
+#13 25.47 Downloading packaging-26.3-py3-none-any.whl (129 kB)
+#13 25.53 Downloading pandas-3.0.5-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (10.9 MB)
+#13 25.72    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.9/10.9 MB 55.9 MB/s eta 0:00:00
+#13 25.78 Downloading platformdirs-4.11.9-py3-none-any.whl (24 kB)
+#13 25.83 Downloading propcache-0.5.4-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (234 kB)
+#13 25.89 Downloading pycryptodomex-3.23.0-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.3 MB)
+#13 25.92    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 72.3 MB/s eta 0:00:00
+#13 25.98 Downloading pynwb-4.2.0-py3-none-any.whl (1.4 MB)
+#13 26.00    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 72.0 MB/s eta 0:00:00
+#13 26.06 Downloading pyout-0.8.1-py3-none-any.whl (53 kB)
+#13 26.12 Downloading pyyaml-6.0.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (801 kB)
+#13 26.13    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 801.6/801.6 kB 61.7 MB/s eta 0:00:00
+#13 26.19 Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+#13 26.25 Downloading rpds_py-2026.6.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (365 kB)
+#13 26.32 Downloading secretstorage-3.5.0-py3-none-any.whl (15 kB)
+#13 26.38 Downloading cryptography-50.0.1-cp311-abi3-manylinux_2_34_x86_64.whl (4.7 MB)
+#13 26.47    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 55.2 MB/s eta 0:00:00
+#13 26.53 Downloading cffi-2.1.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+#13 26.59 Downloading semantic_version-2.10.0-py2.py3-none-any.whl (15 kB)
+#13 26.64 Downloading tenacity-9.1.4-py3-none-any.whl (28 kB)
+#13 26.71 Downloading tensorstore-0.1.85-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (21.6 MB)
+#13 27.23    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 21.6/21.6 MB 41.5 MB/s eta 0:00:00
+#13 27.29 Downloading ml_dtypes-0.6.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (410 kB)
+#13 27.35 Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+#13 27.41 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#13 27.47 Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+#13 27.54 Downloading aiohttp-3.14.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.8 MB)
+#13 27.58    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 53.7 MB/s eta 0:00:00
+#13 27.64 Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)
+#13 27.69 Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+#13 27.75 Downloading frozenlist-1.8.0-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (234 kB)
+#13 27.82 Downloading blessed-1.50.0-py3-none-any.whl (140 kB)
+#13 27.88 Downloading jinxed-2.1.0-py2.py3-none-any.whl (104 kB)
+#13 27.94 Downloading wcwidth-0.8.3-py3-none-any.whl (331 kB)
+#13 28.01 Downloading fsspec-2026.7.0-py3-none-any.whl (206 kB)
+#13 28.08 Downloading isodate-0.7.2-py3-none-any.whl (22 kB)
+#13 28.14 Downloading jaraco.classes-3.4.0-py3-none-any.whl (6.8 kB)
+#13 28.21 Downloading jaraco_context-6.1.2-py3-none-any.whl (7.9 kB)
+#13 28.27 Downloading jaraco_functools-4.6.0-py3-none-any.whl (11 kB)
+#13 28.33 Downloading jsonpointer-3.1.1-py3-none-any.whl (7.7 kB)
+#13 28.39 Downloading webcolors-25.10.0-py3-none-any.whl (14 kB)
+#13 28.45 Downloading fqdn-1.5.1-py3-none-any.whl (9.1 kB)
+#13 28.51 Downloading isoduration-20.11.0-py3-none-any.whl (11 kB)
+#13 28.58 Downloading arrow-1.4.0-py3-none-any.whl (68 kB)
+#13 28.64 Downloading more_itertools-11.1.0-py3-none-any.whl (72 kB)
+#13 28.71 Downloading natsort-8.4.0-py3-none-any.whl (38 kB)
+#13 28.77 Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+#13 28.83 Downloading pydantic_settings-2.15.0-py3-none-any.whl (69 kB)
+#13 28.89 Downloading python_dotenv-1.2.3-py3-none-any.whl (22 kB)
+#13 28.95 Downloading rfc3339_validator-0.1.4-py2.py3-none-any.whl (3.5 kB)
+#13 29.01 Downloading rfc3987-1.3.8-py2.py3-none-any.whl (13 kB)
+#13 29.07 Downloading rich_click-1.9.9-py3-none-any.whl (71 kB)
+#13 29.13 Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+#13 29.20 Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+#13 29.23    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 53.8 MB/s eta 0:00:00
+#13 29.29 Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+#13 29.35 Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+#13 29.41 Downloading tzdata-2026.4-py2.py3-none-any.whl (347 kB)
+#13 29.48 Downloading uri_template-1.3.0-py3-none-any.whl (11 kB)
+#13 29.79 Building wheels for collected packages: dandi-cache-utils
+#13 29.79   Building wheel for dandi-cache-utils (pyproject.toml): started
+#13 29.89   Building wheel for dandi-cache-utils (pyproject.toml): finished with status 'done'
+#13 29.89   Created wheel for dandi-cache-utils: filename=dandi_cache_utils-0.1.8-py3-none-any.whl size=47150 sha256=49c05c5cf69b7920f02075b05881a7b00869bd289aa3fd48f1fb6faa2cc0bf29
+#13 29.89   Stored in directory: /tmp/pip-ephem-wheel-cache-sxwgac6g/wheels/45/1f/8c/2672006fb65fcb4b823d2aad1e9715eca14bdd90457cb3220a
+#13 29.89 Successfully built dandi-cache-utils
+#13 29.99 Installing collected packages: rfc3987, jinxed, ci-info, webcolors, wcwidth, urllib3, uri-template, tzdata, typing-extensions, tqdm, tenacity, six, semantic-version, ruamel.yaml, rpds-py, pyyaml, python-dotenv, pygments, pycryptodomex, pycparser, propcache, platformdirs, packaging, numpy, natsort, multidict, more-itertools, mdurl, jsonpointer, jmespath, jeepney, jaraco.context, isodate, interleave, idna, humanize, google-crc32c, fsspec, frozenlist, fqdn, fasteners, dnspython, deno, cloudpickle, click, charset_normalizer, certifi, attrs, annotated-types, aiohappyeyeballs, acres, zarr_checksum, yarl, typing-inspection, rfc3339-validator, requests, referencing, python-dateutil, pydantic-core, numcodecs, ml_dtypes, markdown-it-py, joblib, jaraco.functools, jaraco.classes, h5py, email-validator, donfig, click-didyoumean, cffi, blessed, bidsschematools, bids-validator-deno, aiosignal, zarr, tensorstore, rich, pydantic, pandas, keyrings.alt, jsonschema-specifications, fscacher, etelemetry, cryptography, botocore, arrow, aiohttp, SecretStorage, s3transfer, rich-click, pydantic-settings, jsonschema, isoduration, pyout, keyring, hdmf, dandi-cache-utils, boto3, pynwb, dandischema, nwbinspector, dandi
+#13 37.51 
+#13 37.51 Successfully installed SecretStorage-3.5.0 acres-0.5.0 aiohappyeyeballs-2.7.1 aiohttp-3.14.3 aiosignal-1.4.0 annotated-types-0.8.0 arrow-1.4.0 attrs-26.1.0 bids-validator-deno-3.0.1 bidsschematools-1.2.7 blessed-1.50.0 boto3-1.43.97 botocore-1.43.97 certifi-2026.7.22 cffi-2.1.1 charset_normalizer-3.5.1 ci-info-0.4.0 click-8.5.0 click-didyoumean-0.3.1 cloudpickle-3.1.2 cryptography-50.0.1 dandi-0.80.0 dandi-cache-utils-0.1.8 dandischema-0.14.0 deno-2.9.7 dnspython-2.8.0 donfig-0.8.1.post1 email-validator-2.3.0 etelemetry-0.3.1 fasteners-0.20 fqdn-1.5.1 frozenlist-1.8.0 fscacher-0.4.4 fsspec-2026.7.0 google-crc32c-1.8.0 h5py-3.16.0 hdmf-6.2.0 humanize-4.16.0 idna-3.20 interleave-0.3.0 isodate-0.7.2 isoduration-20.11.0 jaraco.classes-3.4.0 jaraco.context-6.1.2 jaraco.functools-4.6.0 jeepney-0.9.0 jinxed-2.1.0 jmespath-1.1.0 joblib-1.6.0 jsonpointer-3.1.1 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 keyring-25.7.0 keyrings.alt-5.0.2 markdown-it-py-4.2.0 mdurl-0.1.2 ml_dtypes-0.6.0 more-itertools-11.1.0 multidict-6.8.0 natsort-8.4.0 numcodecs-0.17.0 numpy-2.5.3 nwbinspector-0.7.2 packaging-26.3 pandas-3.0.5 platformdirs-4.11.9 propcache-0.5.4 pycparser-3.0 pycryptodomex-3.23.0 pydantic-2.13.5 pydantic-core-2.46.5 pydantic-settings-2.15.0 pygments-2.21.0 pynwb-4.2.0 pyout-0.8.1 python-dateutil-2.9.0.post0 python-dotenv-1.2.3 pyyaml-6.0.3 referencing-0.37.0 requests-2.34.2 rfc3339-validator-0.1.4 rfc3987-1.3.8 rich-15.0.0 rich-click-1.9.9 rpds-py-2026.6.3 ruamel.yaml-0.19.1 s3transfer-0.19.2 semantic-version-2.10.0 six-1.17.0 tenacity-9.1.4 tensorstore-0.1.85 tqdm-4.70.1 typing-extensions-4.16.0 typing-inspection-0.4.4 tzdata-2026.4 uri-template-1.3.0 urllib3-2.8.0 wcwidth-0.8.3 webcolors-25.10.0 yarl-1.25.1 zarr-3.1.5 zarr_checksum-0.4.7
+#13 DONE 39.0s
+
+#14 exporting to oci image format
+#14 exporting layers
+#14 exporting layers 9.3s done
+#14 exporting manifest sha256:13ddf1bde56fc2fde85519cd9edcb07785d4ef885c41adf13fc213194f45008a
+#14 exporting manifest sha256:13ddf1bde56fc2fde85519cd9edcb07785d4ef885c41adf13fc213194f45008a 0.0s done
+#14 exporting config sha256:566ac37ddec4ab3d915413a21925a890c939dfedb8d413fc3ccf11ed2080d930 done
+#14 sending tarball
+#14 sending tarball 1.9s done
+#14 DONE 11.2s

@@ -1,0 +1,10 @@
+.DS_Store
+__pycache__/
+*.pyc
+.pixi/
+.venv/
+benchmark/docker-config/
+benchmark/results/*.tar
+benchmark/results/solve-cache/
+benchmark/tooling/micromamba
+benchmark/tooling/bootstrap-ca.pem

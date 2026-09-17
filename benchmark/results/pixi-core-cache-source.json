@@ -1,0 +1,110 @@
+{
+  "name": "pixi-core-cache-source",
+  "variant": "pixi",
+  "target": "core-cache",
+  "case": "source",
+  "seconds": 2.724040041968692,
+  "returncode": 0,
+  "timestamp": "2026-09-17T20:33:53.209226+00:00",
+  "command": [
+    "docker",
+    "buildx",
+    "build",
+    "--builder",
+    "dandi-pixi-bench",
+    "--platform",
+    "linux/amd64",
+    "--progress",
+    "plain",
+    "--provenance=false",
+    "--file",
+    "/Users/johnlee/code/CON/dandi-cache/benchmark/Dockerfile.pixi",
+    "--target",
+    "core-cache",
+    "--tag",
+    "dandi-bench:pixi-core-cache",
+    "--output",
+    "type=oci,dest=/Users/johnlee/code/CON/dandi-cache/benchmark/results/pixi-core-cache-source.tar,compression=gzip,compression-level=6,force-compression=true",
+    "/Users/johnlee/code/CON/dandi-cache/benchmark"
+  ],
+  "layers": [
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:6310eb16bf4251731feab01e8f633bf5e2d75a657ccad97f420b1f83cce457be",
+      "size": 29792658
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:09a429f536e809fb4b542d3e2b50fba572d20df1c976bd3771645d6813e4a178",
+      "size": 371414311
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:3395f17b7f68261f5bc15d7ddb1b147f13149dc4da41ee43dfe12bffbf9465a3",
+      "size": 2673
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:f6dbe75098effcd45066a20d1795fcc8555acb08b732cb17a95017ae13746aa7",
+      "size": 36786
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+      "digest": "sha256:1959b1451bd3527b7d0bb5f1a6d0d863d0fc4e2261bb6bae94be4018d710e52e",
+      "size": 128318
+    }
+  ],
+  "compressed_bytes": 401374746,
+  "history": [
+    {
+      "created": "2026-08-24T00:00:00Z",
+      "created_by": "# debian.sh --arch 'amd64' out/ 'trixie' '@1787529600'",
+      "comment": "debuerreotype 0.17"
+    },
+    {
+      "created": "2026-09-17T20:29:49.513224221Z",
+      "created_by": "ENV PATH=/opt/env/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin CONDA_PREFIX=/opt/env PIP_NO_CACHE_DIR=1 PIP_DISABLE_PIP_VERSION_CHECK=1 DANDI_CACHE_UTILS_DIR=/opt/dandi-cache-utils",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-09-17T20:29:49.513224221Z",
+      "created_by": "RUN /bin/sh -c micromamba create --ssl-verify /tmp/bootstrap-ca.pem -y -p /opt/env --file /tmp/core.txt     && rm -rf /root/.local/share/mamba /root/.cache # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-09-17T20:29:49.673154388Z",
+      "created_by": "COPY repos/dandi-cache-utils/pyproject.toml repos/dandi-cache-utils/README.md /opt/dandi-cache-utils/ # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-09-17T20:33:43.506819552Z",
+      "created_by": "COPY repos/dandi-cache-utils/src /opt/dandi-cache-utils/src # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-09-17T20:33:44.236243385Z",
+      "created_by": "RUN /bin/sh -c chmod +x /opt/dandi-cache-utils/src/dandi_cache_utils/pipeline/*.sh     && pip install --no-deps --no-build-isolation /opt/dandi-cache-utils # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-09-17T20:33:44.236243385Z",
+      "created_by": "CMD [\"python\" \"--version\"]",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-09-17T20:33:44.236243385Z",
+      "created_by": "LABEL org.opencontainers.image.source=https://github.com/dandi-cache/dandiset-id-to-total-size",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    }
+  ],
+  "diff_ids": [
+    "sha256:411a86676185cb54d695a805b238194a64e9b77e0c723f3802fbb87d333ea0b3",
+    "sha256:4bbe949eaf1f5fbac018c7b376eec0918be75587bcb92395ead3e206b3e4d29d",
+    "sha256:054fd02d5530636856495c0e9a141f7b1149ca60ef7c5b8a6ac30aa98c1185e4",
+    "sha256:ea9ac6d94914d907a25b552ec98e992ac32d13bf43ecc32a08a8944ec4986f66",
+    "sha256:0a70d604908e6e3a18a605ea517242054c47ebfc94dd79eb6954507448a203cf"
+  ]
+}

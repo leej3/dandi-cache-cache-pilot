@@ -1,0 +1,18 @@
+{
+  "dandi-cache-utils": {
+    "commit": "f270fb121cef20a1c8376fbf97ed0c5b6adfa55c",
+    "url": "https://github.com/dandi-cache/dandi-cache-utils.git"
+  },
+  "dandiset-id-to-total-size": {
+    "commit": "8ed2ade7c9e95e8e9dcb348dba61a594f4868952",
+    "url": "https://github.com/dandi-cache/dandiset-id-to-total-size.git"
+  },
+  "qualifying-aind-content-ids": {
+    "commit": "c151fe22ffd76a5c55547cf50da71c4940313152",
+    "url": "https://github.com/dandi-cache/qualifying-aind-content-ids.git"
+  },
+  "valid-nwb-file-to-number-of-groups": {
+    "commit": "b659245e47aae0b5be8b156ad943205cc99f0086",
+    "url": "https://github.com/dandi-cache/valid-nwb-file-to-number-of-groups.git"
+  }
+}

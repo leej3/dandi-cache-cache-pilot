@@ -1,0 +1,6 @@
+@EXPLICIT
+https://conda.anaconda.org/conda-forge/noarch/probeinterface-0.3.2-pyhcf101f3_0.conda#3d550b62b4f3f03812933164df4a5170
+https://conda.anaconda.org/conda-forge/noarch/python-neo-0.14.5-pyhd8ed1ab_0.conda#07daaa5809e8724baad914ac3c054e56
+https://conda.anaconda.org/conda-forge/noarch/quantities-0.16.4-pyhd8ed1ab_0.conda#06ca1e20b061137b8f7cc8ccc58cb69f
+https://conda.anaconda.org/conda-forge/noarch/setuptools-84.0.0-pyh332efcf_0.conda#62ac906f1cd582c6c264c95625cb9d6f
+https://conda.anaconda.org/conda-forge/noarch/spikeinterface-0.104.8-pyh742d864_0.conda#d8a94ca38b573de3eb6fba8ba36bdfdb

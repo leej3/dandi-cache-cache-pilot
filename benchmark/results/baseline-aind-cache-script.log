@@ -1,0 +1,21 @@
+code/update.py: every `dandi_cache_utils` name used is one this library offers.
+usage: update.py [-h] [--base-directory BASE_DIRECTORY] [--testing]
+                 [--limit LIMIT]
+
+Update the qualifying-aind-content-ids DANDI cache.
+
+options:
+  -h, --help            show this help message and exit
+  --base-directory BASE_DIRECTORY
+                        The directory containing the `sourcedata`,
+                        `derivatives` and `logs` directories. Set to the
+                        mounted dataset path when run inside the pipeline
+                        container; defaults to the repository root.
+  --testing             Run in testing mode: process only the first 10 items
+                        and write `testing_`-prefixed files instead of the
+                        real cache, leaving it untouched. Omit for a complete
+                        update.
+  --limit LIMIT         Cap the number of new items processed in this run. Use
+                        for caches too heavy to clear their backlog in a
+                        single run; successive runs then advance through it.
+                        Omit to process everything.

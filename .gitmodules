@@ -1,0 +1,12 @@
+[submodule "benchmark/repos/dandi-cache-utils"]
+	path = benchmark/repos/dandi-cache-utils
+	url = https://github.com/dandi-cache/dandi-cache-utils.git
+[submodule "benchmark/repos/dandiset-id-to-total-size"]
+	path = benchmark/repos/dandiset-id-to-total-size
+	url = https://github.com/dandi-cache/dandiset-id-to-total-size.git
+[submodule "benchmark/repos/valid-nwb-file-to-number-of-groups"]
+	path = benchmark/repos/valid-nwb-file-to-number-of-groups
+	url = https://github.com/dandi-cache/valid-nwb-file-to-number-of-groups.git
+[submodule "benchmark/repos/qualifying-aind-content-ids"]
+	path = benchmark/repos/qualifying-aind-content-ids
+	url = https://github.com/dandi-cache/qualifying-aind-content-ids.git

@@ -1,0 +1,12 @@
+{
+  "core->nwb": {
+    "unchanged": 199,
+    "added": 3,
+    "removed": 0
+  },
+  "nwb->aind": {
+    "unchanged": 202,
+    "added": 5,
+    "removed": 0
+  }
+}
