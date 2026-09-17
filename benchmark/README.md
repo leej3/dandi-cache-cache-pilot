@@ -1,5 +1,8 @@
 # DANDI Cache image pilot
 
+**Decision: do not roll out organization-wide on this evidence.** The pilot demonstrates local image-build improvements, not faster scheduled updates on fresh GitHub-hosted runners.
+Complete images are larger when Git/git-annex are retained. See the [decision summary](../README.md#decision-do-not-roll-out-organization-wide-on-this-evidence) for the operational limits and maintenance tradeoffs.
+
 This is a local benchmark, not a deployment or a proposed production migration.
 No images were pushed and no upstream source repository was changed.
 See [REPORT.md](REPORT.md) for measured results and limitations.
@@ -24,9 +27,8 @@ The benchmark Dockerfiles live outside those clones.
 | `Dockerfile.baseline-runtime` | Upstream APT and pip instructions | Omitted |
 | `Dockerfile.runtime` | Shared Pixi lock, exact additive package installs | Omitted |
 
-The baseline changes only build-context paths and joins the existing parent/child Dockerfiles into named stages.
-It preserves the upstream package installation commands and their order.
-The runtime variants remove tools used by host-side orchestration, while keeping the processing dependencies.
+The baseline changes only build-context paths and joins the existing parent/child Dockerfiles into named stages. It preserves the upstream package installation commands and their order. The runtime variants experimentally omit Git/git-annex based on their use by host-side orchestration.
+Their removal has not been validated through the complete pipeline and is not an established safe optimization.
 They do not measure the runner environment.
 
 Pixi resolves the core, NWB, and AIND features in one `runtime` solve group.

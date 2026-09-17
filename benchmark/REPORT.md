@@ -1,9 +1,15 @@
 # DANDI Cache Pixi pilot results
 
 Measured September 17, 2026 across the shared `dandi-cache-utils` repository and three cache repositories.
-The additive lock/layer design substantially improves rebuilds and the amount of changed image data.
-Moving almost everything to conda-forge does not make the complete images smaller in this pilot.
-Removing host-only tools makes either packaging approach smaller.
+**Decision: do not roll out organization-wide on this evidence.** The added maintenance machinery is not justified by a demonstrated improvement in scheduled updates on fresh GitHub-hosted runners.
+See the [decision summary](../README.md#decision-do-not-roll-out-organization-wide-on-this-evidence).
+
+The additive lock/layer design substantially improves rebuilds and the amount of changed image data. Moving almost everything to conda-forge does not make the complete images smaller in this pilot. Experimentally omitting Git/git-annex makes either packaging approach smaller, but the complete pipeline was not tested without them.
+
+Each fresh runner must obtain the image bytes from GHCR or a restored cache.
+Smaller changed layers do not imply a 0.15 MB full-image download for a fresh runner.
+Restoring and loading a cached image might be faster than a registry pull, but neither that comparison nor scheduled-update startup was measured.
+BuildKit caching helps image builds; it does not automatically populate the Docker image cache of a separate update job.
 
 ## Compressed image sizes
 
@@ -18,7 +24,8 @@ The small empty cache-environment distribution adds about 0.002 MB in the baseli
 
 With the same tool scope, Pixi increases the full image size by about 10.4% for core, 3.0% for NWB, and 3.4% for AIND.
 The processing-only Pixi images are 19–25% smaller than the original images, but the similarly trimmed APT/pip images are smaller still.
-Those savings must be attributed to removing Git, git-annex and unneeded dependencies, not to the package manager.
+Those savings come from omitting Git, git-annex and their dependencies, not from the package manager.
+That omission is an experimental change in capabilities, not a validated equivalent replacement.
 
 ## Build timing
 
@@ -144,14 +151,20 @@ These differences and the missing validator affect the interpretation of image s
 
 ## Recommendation
 
-Adopt the shared-lock and additive-layer architecture for a follow-up pilot.
-It demonstrably preserves shared package builds, prevents the observed boto3/botocore conflict, and keeps source-only updates tiny.
-Keep runner tools out of processing images independently of the package-manager choice.
-Choose conda versus PyPI package by package after correcting the metadata failures; maximizing the conda package count is not a size optimization by itself.
+Keep the current organization-wide tooling for now.
+The pilot preserves shared package builds, prevents the observed boto3/botocore conflict, and keeps source-only updates tiny.
+Those benefits do not establish a worthwhile improvement for scheduled updates on fresh GitHub-hosted runners.
+The prototype also introduces shared locks, environment exports, a separate installer, additive-package checks and packaging exceptions.
 
-Before rollout, repeat the benchmark on a native x86 GitHub runner with pinned base digests and an optimized locked uv/pip control.
-Use at least three cold builds per variant and validate a bounded real-data update without publishing results.
-The local timing ratios are promising evidence, not a forecast of production CI times.
+Retain Git/git-annex unless a complete pipeline validation establishes that removing them preserves the supported behavior.
+Prioritize simpler dependency consistency and Docker-layer improvements within the existing tooling.
+Do not treat experimental tool removal as evidence that a Pixi migration reduces equivalent-scope image size.
+
+Revisit migration if a repository has materially different dependency or build costs, or native GitHub-runner measurements show worthwhile end-to-end savings.
+This pilot sampled four repositories and did not audit every repository in the organization.
+A further comparison should include an optimized locked uv/pip control and GHCR pull versus Actions-cache restore plus `docker load` on fresh runners.
+Include dependency installation, cache restoration, image loading and a bounded real-data update in the elapsed time.
+The existing local ratios are not forecasts of production CI performance.
 
 No production images or upstream source repositories were changed.
 See [README.md](README.md) for implementation, reproduction commands and measurement details.
