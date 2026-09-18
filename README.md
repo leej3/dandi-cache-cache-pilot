@@ -1,5 +1,17 @@
 # DANDI Cache cache pilot
 
+```mermaid
+flowchart LR
+    builds["Source-only core rebuild<br/>51 s → 4 s"] --> decision
+    size["Complete images<br/>3–10% larger"] --> decision
+    ci["Fresh-runner update speedup<br/>Not measured"] --> decision
+    cost["Migration cost<br/>Extra tooling + packaging fixes"] --> decision
+    decision["Keep current tooling<br/>No organization-wide rollout"]
+```
+
+Current approach → Pixi-based prototype.
+Local amd64-emulated measurements, with Git/git-annex retained.
+
 ## Decision: do not roll out organization-wide on this evidence
 
 **The pilot has not demonstrated faster scheduled updates or smaller complete images with Git and git-annex retained.** The measured image-build improvements do not currently justify the additional machinery for an organization-wide switch.
